@@ -50,7 +50,7 @@ Okay so let&#8217;s find out what we get back from that stored procedure if I ju
 
 I get exactly what I am expecting, my username is in both the SYSTEM\_USER and ORIGINAL\_LOGIN() function returns.
 
-[<img class="alignnone size-full wp-image-221 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/03/SystemUser_Result1.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/03/SystemUser_Result1.png 549w, https://www.codenameowl.com/wp-content/uploads/2019/03/SystemUser_Result1-300x151.png 300w" sizes="(max-width: 549px) 100vw, 549px" />](https://www.codenameowl.com/wp-content/uploads/2019/03/SystemUser_Result1.png)
+![](/assets/img/SystemUser_Result1.png)
 
 Now I need another user in that database to test against, someone that isn&#8217;t me. I am going to map this user to the DBA\_Tasks database and give them db\_owner permissions
 
@@ -85,7 +85,7 @@ Now that we have another user, let&#8217;s try executing that stored procedure a
 
 I am still logged into the computer as me but what results am I going to get back from my test stored procedure?
 
-[<img class="alignnone size-full wp-image-222 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/03/SystemUser_Result2.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/03/SystemUser_Result2.png 429w, https://www.codenameowl.com/wp-content/uploads/2019/03/SystemUser_Result2-300x178.png 300w" sizes="(max-width: 429px) 100vw, 429px" />](https://www.codenameowl.com/wp-content/uploads/2019/03/SystemUser_Result2.png)
+![](/assets/img/SystemUser_Result2.png)
 
 As you can see, SYSTEM\_USER has returned the principal that we ran the stored procedure as, if we are trying to capture WHO ran that stored procedure this obviously wouldn&#8217;t be sufficient, ORIGINAL\_LOGIN() however has given us the username of the principal logged into the machine and where the query was being executed which in this case would have been correct.
 
@@ -170,7 +170,7 @@ Our user still only has datawriter, datareader and execute permissions to the DB
 
 There we have it, we are now executing that stored procedure as someone else.
 
-[<img class="alignnone size-full wp-image-222 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/03/SystemUser_Result2.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/03/SystemUser_Result2.png 429w, https://www.codenameowl.com/wp-content/uploads/2019/03/SystemUser_Result2-300x178.png 300w" sizes="(max-width: 429px) 100vw, 429px" />](https://www.codenameowl.com/wp-content/uploads/2019/03/SystemUser_Result2.png)
+![](/assets/img/SystemUser_Result2.png)
 
 We can check if a login has IMPERSONATE permissions by running the following TSQL query against the instance, 1 or 0 will be returned depending on the permission set.
 

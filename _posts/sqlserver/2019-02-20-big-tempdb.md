@@ -185,7 +185,7 @@ Now we are happy with our Extended Event and have everything we want captured sp
   3. Expand The Extended Events Folder
   4. Check that the Extended Event you specified exists
 
-[<img class="alignnone size-full wp-image-196 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Session.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Session.png 407w, https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Session-265x300.png 265w" sizes="(max-width: 407px) 100vw, 407px" />](https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Session.png)
+![](/assets/img/TempDB_ExtendedEvent_Session.png)
 
 If your Extended Event exists you can go ahead and Start it, this will start capturing information right away.
 
@@ -215,8 +215,7 @@ You can also delete the Extended Event using the following T-SQL, this however _
 
 Now that we have some data in the output file(s) which should look like (below) in the location you specified;
 
-<div id="attachment_188" style="width: 1191px" class="wp-caption alignnone">
-  <a href="https://www.codenameowl.com/wp-content/uploads/2019/02/tempdb_event_log.png"><img aria-describedby="caption-attachment-188" class="wp-image-188 size-full img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/02/tempdb_event_log.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/02/tempdb_event_log.png 1181w, https://www.codenameowl.com/wp-content/uploads/2019/02/tempdb_event_log-300x162.png 300w, https://www.codenameowl.com/wp-content/uploads/2019/02/tempdb_event_log-768x414.png 768w, https://www.codenameowl.com/wp-content/uploads/2019/02/tempdb_event_log-1024x551.png 1024w" sizes="(max-width: 1181px) 100vw, 1181px" /></a>
+![]("/assets/img/tempdb_event_log.png")
   
   <p id="caption-attachment-188" class="wp-caption-text">
     The output files as shown on disk
@@ -225,8 +224,7 @@ Now that we have some data in the output file(s) which should look like (below) 
 
 We can go ahead and have a look at the results. The Extended Event Log File(s) are essentially just XML so we can shed them in SQL Server Management Studio just like we would XML to get the information from them into a column based results table.
 
-<div id="attachment_194" style="width: 1304px" class="wp-caption alignnone">
-  <a href="https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_ExampleOut.png"><img aria-describedby="caption-attachment-194" class="wp-image-194 size-full img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_ExampleOut.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_ExampleOut.png 1294w, https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_ExampleOut-300x85.png 300w, https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_ExampleOut-768x217.png 768w, https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_ExampleOut-1024x290.png 1024w" sizes="(max-width: 1294px) 100vw, 1294px" /></a>
+![]("/assets/img/TempDB_ExtendedEvent_Shred_ExampleOut.png")
   
   <p id="caption-attachment-194" class="wp-caption-text">
     Taken from my pre-analysis testing.
@@ -374,11 +372,11 @@ Having this raiserror in the loop will show how many times the loop has been rou
 
 See&#8230;it just prints out how many times the loop has been around
 
-[<img class="alignnone size-full wp-image-214 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Dizzy_Monitor.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Dizzy_Monitor.png 636w, https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Dizzy_Monitor-300x250.png 300w" sizes="(max-width: 636px) 100vw, 636px" />](https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Dizzy_Monitor.png)
+![](/assets/img/TempDB_ExtendedEvent_Dizzy_Monitor.png)
 
 The rest of the T-SQL will get the **top 1500** Forenames from my names table and insert them into our defined Temp table, once it is has done the select it will update them rows with a Surname from the same names table, this will happen 100 times giving us something like this in our Extended Event log file when we shred the data.
 
-[<img class="alignnone size-full wp-image-203 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_DemoOut.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_DemoOut.png 1283w, https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_DemoOut-300x86.png 300w, https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_DemoOut-768x221.png 768w, https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_DemoOut-1024x295.png 1024w" sizes="(max-width: 1283px) 100vw, 1283px" />](https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_DemoOut.png)
+![](/assets/img/TempDB_ExtendedEvent_Shred_DemoOut.png)
 
 #### What Does All That Mean?
 
@@ -401,11 +399,11 @@ One thing that I learnt along away is that in the **SizeChangedKB** column you m
 
 As you can see the query we used for testing caused every single file in TempDB to grow, the size in which that database grew is recorded and the new size of that file is shown.
 
-[<img class="alignnone size-full wp-image-209 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_Grow.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_Grow.png 805w, https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_Grow-300x45.png 300w, https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_Grow-768x114.png 768w" sizes="(max-width: 805px) 100vw, 805px" />](https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_Grow.png)
+![](/assets/img/TempDB_ExtendedEvent_Shred_Grow.png)
 
 The offending SQL query is also shown, so you are able to easily track down what query caused the growth to happen.
 
-[<img class="alignnone size-full wp-image-210 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_Offending_Query.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_Offending_Query.png 448w, https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_Offending_Query-300x76.png 300w" sizes="(max-width: 448px) 100vw, 448px" />](https://www.codenameowl.com/wp-content/uploads/2019/02/TempDB_ExtendedEvent_Shred_Offending_Query.png)
+![](/assets/img/TempDB_ExtendedEvent_Shred_Offending_Query.png)
 
 You are then able to track down on your SQL Server what T-SQL query is causing your TempDB to grow, although we know that TempDB should really be configured to fill the disk in which it resides but as we mentioned earlier this isn&#8217;t possible in every configuration so it is important to understand that not all growth events are bad but this will allow you to see what is causing the growth of the database so that you can monitor and take action if required.
 
@@ -413,6 +411,6 @@ You are then able to track down on your SQL Server what T-SQL query is causing y
 
 This project has taught me a lot about Extended Events, how powerful they are, how they can be created and how the data can be viewed right inside SQL Server Management Studio by shredding the XML into something you can easily read.
 
-The above has also taught me that TempDB is a place where lots of different things, which cannot be covered in one post take place, the database can grow uncontrollably if one query spills or writes to a Temp table outside of the expected behaviour of the developer.
+The above has also taught me that TempDB is a place where lots of different things, which cannot be covered in one post take place, the database can grow uncontrollably if one query spills or writes to a Temp table outside of the expected behavior of the developer.
 
 This lesson has also taught me that TempDB should always where possible be sized for the instance in which it is running, it should be given a dedicated disk and allowed to fill that disk from day one.

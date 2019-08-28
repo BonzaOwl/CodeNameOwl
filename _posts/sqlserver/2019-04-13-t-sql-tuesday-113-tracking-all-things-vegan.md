@@ -12,7 +12,7 @@ tags:
   - story
   - T-SQL Tuesday
 ---
-[<img class=" wp-image-369 aligncenter img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/T-SQL-Tuesday-Logo.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/04/T-SQL-Tuesday-Logo.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2019/04/T-SQL-Tuesday-Logo-150x150.jpg 150w" sizes="(max-width: 234px) 100vw, 234px" />](https://www.codenameowl.com/wp-content/uploads/2019/04/T-SQL-Tuesday-Logo.jpg)
+![](/assets/img/T-SQL-Tuesday-Logo.jpg)
 
 This month&#8217;s T-SQL Tuesday comes from Todd Kleinhans ([Blog](https://toddkleinhans.wordpress.com/) & [Twitter](http://www.twitter.com/toddkleinhans)) he asked, &#8220;what do YOU use databases for in your personal life?&#8221;
 
@@ -30,7 +30,7 @@ That is where the SQL Database came from.
 
 When I started as a SQL Server developer I wanted something that would give me a project, something outside of my day to day work life that I could use to collect my own data in, manipulate it and not break any of the work rules, so I designed **_Is That Vegan_** taking what I had already collected and importing that into a SQL Database, then going back and completing the gaps.
 
-[<img class="alignnone size-full wp-image-372 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/isitvegan.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/04/isitvegan.png 896w, https://www.codenameowl.com/wp-content/uploads/2019/04/isitvegan-300x195.png 300w, https://www.codenameowl.com/wp-content/uploads/2019/04/isitvegan-768x499.png 768w" sizes="(max-width: 896px) 100vw, 896px" />](https://www.codenameowl.com/wp-content/uploads/2019/04/isitvegan.png)
+![](/assets/img/isitvegan.png)
 
 ### It may not be perfect
 

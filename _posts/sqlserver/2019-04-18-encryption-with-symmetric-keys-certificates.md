@@ -123,7 +123,7 @@ Once completed I need to tell SQL Server to close up the Symmetric Key.
 
 As you can see, the data has been encrypted
 
-[<img class="alignnone size-full wp-image-359 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Initial-Insert-Encrypted.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Initial-Insert-Encrypted.png 1162w, https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Initial-Insert-Encrypted-300x61.png 300w, https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Initial-Insert-Encrypted-768x157.png 768w, https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Initial-Insert-Encrypted-1024x209.png 1024w" sizes="(max-width: 1162px) 100vw, 1162px" />](https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Initial-Insert-Encrypted.png)
+![](/assets/img/Encryption-Initial-Insert-Encrypted.png)
 
 ### Drop & Roll
 
@@ -147,7 +147,7 @@ As you can see, the data has been encrypted
 
 Now that the sensitive data has been encrypted, I can drop the plain text columns
 
-[<img class="alignnone size-full wp-image-360 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/Encrption-Dropped-Columns.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/04/Encrption-Dropped-Columns.png 1158w, https://www.codenameowl.com/wp-content/uploads/2019/04/Encrption-Dropped-Columns-300x61.png 300w, https://www.codenameowl.com/wp-content/uploads/2019/04/Encrption-Dropped-Columns-768x156.png 768w, https://www.codenameowl.com/wp-content/uploads/2019/04/Encrption-Dropped-Columns-1024x208.png 1024w" sizes="(max-width: 1158px) 100vw, 1158px" />](https://www.codenameowl.com/wp-content/uploads/2019/04/Encrption-Dropped-Columns.png)
+![](/assets/img/Encrption-Dropped-Columns.png)
 
 ### Let&#8217;s Have A Read
 
@@ -172,7 +172,7 @@ The above example shows how to read the data from the encrypted columns.
 
 As you can see, the data is returned as expected.
 
-[<img class="alignnone size-full wp-image-361 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Read-Back.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Read-Back.png 324w, https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Read-Back-300x195.png 300w" sizes="(max-width: 324px) 100vw, 324px" />](https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Read-Back.png)
+![](/assets/img/Encryption-Read-Back.png)
 
 ### Insert Some More
 
@@ -190,7 +190,7 @@ As you can see, the data is returned as expected.
 
 The above example shows how to go about adding more data into the encrypted columns.
 
-[<img class="alignnone size-full wp-image-362 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Add-More-Data.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Add-More-Data.png 1158w, https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Add-More-Data-300x66.png 300w, https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Add-More-Data-768x170.png 768w, https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Add-More-Data-1024x226.png 1024w" sizes="(max-width: 1158px) 100vw, 1158px" />](https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Add-More-Data.png)
+![](/assets/img/Encryption-Add-More-Data.png)
 
 <pre>     
 	<code class="sql">
@@ -211,7 +211,7 @@ The above example shows how to go about adding more data into the encrypted colu
 
 Finally, using the above you can see that PatientNumber UR102345679 was added successfully, encrypted and read back by SQL Server.
 
-[<img class="alignnone size-full wp-image-363 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-More-Data-Read-Back.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-More-Data-Read-Back.png 322w, https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-More-Data-Read-Back-300x239.png 300w" sizes="(max-width: 322px) 100vw, 322px" />](https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-More-Data-Read-Back.png)
+![](/assets/img/Encryption-More-Data-Read-Back.png)
 
 Performance wise this would be extremely horrible, it isn&#8217;t recommended to encrypt a primary key column, in production, there would be another column that would be the primary key and live within the index however this is for demonstration purposes only.
 

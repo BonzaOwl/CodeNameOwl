@@ -107,7 +107,7 @@ As expected, SQL Server has thrown an error;
     </code>
 </pre>
 
-[<img class="alignnone size-full wp-image-493 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/06/Insert-from-select.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/06/Insert-from-select.png 1144w, https://www.codenameowl.com/wp-content/uploads/2019/06/Insert-from-select-300x204.png 300w, https://www.codenameowl.com/wp-content/uploads/2019/06/Insert-from-select-768x522.png 768w, https://www.codenameowl.com/wp-content/uploads/2019/06/Insert-from-select-1024x695.png 1024w" sizes="(max-width: 1144px) 100vw, 1144px" />](https://www.codenameowl.com/wp-content/uploads/2019/06/Insert-from-select.png)
+![Inserting From Select](/assets/img/Insert-from-select.png)
 
 To fix this, the columns need to be specified on both the Insert & Select which will tell SQL Server &#8220;Hey, I have these columns where I would like to get data from, and here are the columns I would like to put that data&#8221;
 
@@ -139,7 +139,7 @@ This is demonstrated in the below;
 
 Just as we would expect, the data was successfully inserted.
 
-[<img class="alignnone size-full wp-image-494 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/06/Insert-from-select2.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/06/Insert-from-select2.png 757w, https://www.codenameowl.com/wp-content/uploads/2019/06/Insert-from-select2-290x300.png 290w" sizes="(max-width: 757px) 100vw, 757px" />](https://www.codenameowl.com/wp-content/uploads/2019/06/Insert-from-select2.png)
+![Inserting From Select](/assets/img/Insert-from-select2.png)
 
 #### Drop them tables
 

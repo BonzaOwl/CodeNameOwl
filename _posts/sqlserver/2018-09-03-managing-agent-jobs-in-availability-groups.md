@@ -59,8 +59,7 @@ Now that we have our table we can populate it with some of the jobs we would lik
 
 Once you have populated the table with all of the jobs you would like to include in the check, we will need to create the stored procedure that will enable/disable the jobs depending on the member status. I have included an example below.
 
-<img class="alignnone size-medium wp-image-58 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2018/09/Availability_Groups_And_Server_Agents_10-300x98.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2018/09/Availability_Groups_And_Server_Agents_10-300x98.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2018/09/Availability_Groups_And_Server_Agents_10.jpg 363w" sizes="(max-width: 300px) 100vw, 300px" /> 
-
+![](https://www.codenameowl.com/wp-content/uploads/2018/09/Availability_Groups_And_Server_Agents_10-300x98.jpg")
 #### What Is Going On?
 
 Alright, let me try and explain what that stored procedure is doing, I will break it down into manageable chunks
@@ -259,7 +258,7 @@ This is where the loop begins, we are checking to make sure that @Counter is les
 	</code>
 </pre>
 
-The next section is where the jobs are either enabled or disabled depending on **@Availability_Role** at the very top we are going to get the @Job\_Name we do this by selecting Job\_Name from #Excluded_Jobs where the ID of the row equals the ID of @Couner.
+The next section is where the jobs are either enabled or disabled depending on **@Availability_Role** at the very top we are going to get the @Job\_Name we do this by selecting Job\_Name from #Excluded_Jobs where the ID of the row equals the ID of @Counter.
 
 Once we have this we check to see what **@Availability_Role** is set to, if it is Primary we are going to Enable the Job, if **@Availability_Role** is not set to Primary we are going to disable the job.
 
@@ -287,27 +286,27 @@ Your going to need to create a SQL Server Agent Job that will call the stored pr
 
 Let&#8217;s show you how to do that then yeah?
 
-[<img class="alignnone wp-image-43 size-medium img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_00-300x199.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_00-300x199.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_00.jpg 388w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_00.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_00-300x199.jpg)
 
 First, On the object explorer in SQL Management Studio expand the SQL Server Agent by clicking the +
 
-[<img class="alignnone wp-image-44 size-medium img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_01-300x282.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_01-300x282.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_01.jpg 384w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_01.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_01-300x282.jpg)
 
 Next, you will see a bunch of folders appear, one of which is called Jobs, right-click that
 
-[<img class="alignnone wp-image-45 size-medium img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_02-246x300.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_02-246x300.jpg 246w, https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_02.jpg 381w" sizes="(max-width: 246px) 100vw, 246px" />](https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_02.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_02-246x300.jpg)
 
 A context menu will appear, from this menu select New Job.
 
-[<img class="alignnone wp-image-46 size-medium img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_03-300x272.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_03-300x272.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_03.jpg 690w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_03.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_03-300x272.jpg)
 
 This will launch a new window where we can setup our job, enter a name in the name field, I have gone ahead and called mine Availability Member Check, you can call it whatever you want, I have also changed the Owner to sa (I have renamed my sa account)
 
-[<img class="alignnone wp-image-47 size-medium img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_04-300x272.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_04-300x272.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_04.jpg 690w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_04.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_04-300x272.jpg)
 
 Next, from the new job window, select Steps from the Select a page pane on the right-hand side of the window. Once you have clicked Steps from the bottom select New.
 
-[<img class="alignnone wp-image-49 size-medium img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_06-300x272.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_06-300x272.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_06.jpg 690w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_06.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_06-300x272.jpg)
 
 1. Enter a name for the step, I call called this Run Stored Procedure  
 2. Choose the Database in which the stored procedure lives in, DBA_Tasks should exist if you have followed this post all the way, if not select your utility database.  
@@ -321,13 +320,11 @@ Next, from the new job window, select Steps from the Select a page pane on the r
 
 4. Once you have completed that, Click OK
 
-[<img class="alignnone wp-image-50 size-medium img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_07-300x272.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_07-300x272.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_07.jpg 690w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_07.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_07-300x272.jpg)
 
 From the side panel, of the New Job window, select Schedules, then click New
 
-<li style="list-style-type: none;">
-  <a href="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_08.jpg"><img class="alignnone wp-image-51 size-medium img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_08-300x264.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_08-300x264.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_08.jpg 662w" sizes="(max-width: 300px) 100vw, 300px" /></a>
-</li>
+![]("/assets/img/Availability_Groups_And_Server_Agents_08.jpg")
 
 1. Enter a name for the step, I have called mine Every Minute
 
@@ -337,9 +334,7 @@ From the side panel, of the New Job window, select Schedules, then click New
 
 4. Once you are happy Click Ok
 
-<li style="list-style-type: none;">
-  <a href="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_09.jpg"><img class="alignnone wp-image-52 size-medium img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_09-300x272.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_09-300x272.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2018/08/Availability_Groups_And_Server_Agents_09.jpg 690w" sizes="(max-width: 300px) 100vw, 300px" /></a>
-</li>
+![]("/assets/img/Availability_Groups_And_Server_Agents_09.jpg)
 
 Finally, select the Notifications page from the side bar on the New Job window.
 
