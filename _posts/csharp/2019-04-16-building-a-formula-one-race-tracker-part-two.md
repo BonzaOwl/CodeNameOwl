@@ -435,7 +435,7 @@ Now that the table schema is created and we have populated the referential data 
 
 You should get some like this in the output
 
-[<img class="alignnone wp-image-353 size-full img-fluid " src="/assets/img/Formula-1-Drivers-Driver-Team-Query.png" alt="Driver Team Sample Query Output" srcset="/assets/img/Formula-1-Drivers-Driver-Team-Query.png 575w, /assets/img/Formula-1-Drivers-Driver-Team-Query-300x222.png 300w" sizes="(max-width: 575px) 100vw, 575px" />](/assets/img/Formula-1-Drivers-Driver-Team-Query.png)
+![](/assets/img/Formula-1-Drivers-Driver-Team-Query.png)
 
 In future seasons if a driver moves between teams each driver will have multiple rows returned but as explained above the current team will be the one where the End_Date is NULL.
 
