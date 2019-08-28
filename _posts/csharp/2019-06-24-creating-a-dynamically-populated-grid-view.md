@@ -51,19 +51,19 @@ I will assume you know how to create a form in Visual Studio mine looked like so
 
 Which should look something like this on the page
 
-[<img class="alignnone size-full wp-image-484 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/06/DynamicGridView-1.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/06/DynamicGridView-1.png 1147w, https://www.codenameowl.com/wp-content/uploads/2019/06/DynamicGridView-1-300x54.png 300w, https://www.codenameowl.com/wp-content/uploads/2019/06/DynamicGridView-1-768x139.png 768w, https://www.codenameowl.com/wp-content/uploads/2019/06/DynamicGridView-1-1024x185.png 1024w" sizes="(max-width: 1147px) 100vw, 1147px" />](https://www.codenameowl.com/wp-content/uploads/2019/06/DynamicGridView-1.png)
+![](/assets/img/DynamicGridView-1.png)
 
 **_I am using Bootstrap for the framework_**
 
 The form has a button on it called Btn\_AddRow which has an on click event of Btn\_AddRow_Click, the code for this method looks like this, we will get to that in a moment but essentially we are calling another method when the button is clicked.
 
 <pre> 
-<code class="csharp">
-protected void Btn_AddRow_Click(object sender, EventArgs e)
-{
-    AddNewRows();
-}
-</code>
+    <code class="csharp">
+        protected void Btn_AddRow_Click(object sender, EventArgs e)
+        {
+            AddNewRows();
+        }
+    </code>
 </pre>
 
 ### The GridView
@@ -71,21 +71,21 @@ protected void Btn_AddRow_Click(object sender, EventArgs e)
 On the same page, I have an asp GridView control this is where the products that I select from the drop-down list will appear when the button is clicked, On initial page load the GridView will not show up on the page as the flag AutoGenerateColumns is set to false and there is no data bound to the GridView control at this point.
 
 <pre> 
-<code class="html">
-&lt;div class="row" style="margin-top:10px"&gt;
-    &lt;div class="col-md-12"&gt;
-        &lt;asp:GridView ID="GV_OrderedProducts" AutoGenerateColumns="false" OnRowDeleting="GV_OrderedProducts_RowDeleting" CssClass="table table-bordered" runat="server"&gt;
-            &lt;Columns&gt;
-                &lt;asp:BoundField DataField="Manufacturer" HeaderText="Investigation Required" /&gt;
-                &lt;asp:BoundField DataField="ManufacturerID" Visible="false" /&gt;
-                &lt;asp:BoundField DataField="Product" HeaderText="Requesting Facility" /&gt;
-                &lt;asp:BoundField DataField="ProductID" Visible="false" /&gt;
-                &lt;asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-sm btn-danger" DeleteText="Remove Row" /&gt;                     
-            &lt;/Columns&gt;
-        &lt;/asp:GridView&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code>
+    <code class="html">
+        &lt;div class="row" style="margin-top:10px"&gt;
+            &lt;div class="col-md-12"&gt;
+                &lt;asp:GridView ID="GV_OrderedProducts" AutoGenerateColumns="false" OnRowDeleting="GV_OrderedProducts_RowDeleting" CssClass="table table-bordered" runat="server"&gt;
+                    &lt;Columns&gt;
+                        &lt;asp:BoundField DataField="Manufacturer" HeaderText="Investigation Required" /&gt;
+                        &lt;asp:BoundField DataField="ManufacturerID" Visible="false" /&gt;
+                        &lt;asp:BoundField DataField="Product" HeaderText="Requesting Facility" /&gt;
+                        &lt;asp:BoundField DataField="ProductID" Visible="false" /&gt;
+                        &lt;asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-sm btn-danger" DeleteText="Remove Row" /&gt;                     
+                    &lt;/Columns&gt;
+                &lt;/asp:GridView&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    </code>
 </pre>
 
 ### Initialize The Grid
@@ -93,23 +93,23 @@ On the same page, I have an asp GridView control this is where the products that
 When the page first loads, I need to Initialize the GridView to do this I am going to create a new ViewState called dtSource then create a DataTable which will contain the columns of my Gridview, populating the ViewState with the data table as the source and binding it to the GridView.
 
 <pre> 
-<code class="csharp">
-    private void InitializeGrid()
-    {
-        if (ViewState["dtSource"] == null)
+    <code class="csharp">
+        private void InitializeGrid()
         {
-            DataTable dtSource = new DataTable();
-            dtSource.Columns.Add("Manufacturer");
-            dtSource.Columns.Add("ManufacturerID");
-            dtSource.Columns.Add("Product");
-            dtSource.Columns.Add("ProductID");      
-            ViewState["dtSource"] = dtSource;
- 
-            GV_OrderedProducts.DataSource = dtSource;
-            GV_OrderedProducts.DataBind();
+            if (ViewState["dtSource"] == null)
+            {
+                DataTable dtSource = new DataTable();
+                dtSource.Columns.Add("Manufacturer");
+                dtSource.Columns.Add("ManufacturerID");
+                dtSource.Columns.Add("Product");
+                dtSource.Columns.Add("ProductID");      
+                ViewState["dtSource"] = dtSource;
+
+                GV_OrderedProducts.DataSource = dtSource;
+                GV_OrderedProducts.DataBind();
+            }
         }
-    }
-</code>
+    </code>
 </pre>
 
 ### Add New Rows
@@ -141,7 +141,7 @@ I now need a method to handle the events that will take place when I click the b
 </code>
 </pre>
 
-[<img class="alignnone size-full wp-image-485 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/06/GridViewNewRows.gif" alt="" />](https://www.codenameowl.com/wp-content/uploads/2019/06/GridViewNewRows.gif)
+![](/assets/img/GridViewNewRows.gif)
 
 ### On Row Deleting
 
@@ -161,7 +161,7 @@ This is the method that will handle the removal of the row from the GridView ess
 </code>
 </pre>
 
-### [<img class="alignnone size-full wp-image-486 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/06/GridViewDeleteRows.gif" alt="" />](https://www.codenameowl.com/wp-content/uploads/2019/06/GridViewDeleteRows.gif)
+![](/assets/img/GridViewDeleteRows.gif)
 
 ### The Page Load
 
