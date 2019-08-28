@@ -51,7 +51,7 @@ The mouse is a Logitech M185 Bluetooth mouse that I picked up years ago at the l
 
 Oh hi Harry! &#8211; I used to have a OnePlus 5 with 128GB of memory until it made friends with a local paving slab and smashed. I have been using an old iPhone 6 which only has 16GB of storage which is not ideal however it has been doing me really well, the battery is on the border of not making it through a full day but it is works for now.
 
-![Setup Image]/assets/img/2019Setup-1.jpg)
+![Setup Image](/assets/img/2019Setup-1.jpg)
 
 ## Software
 
