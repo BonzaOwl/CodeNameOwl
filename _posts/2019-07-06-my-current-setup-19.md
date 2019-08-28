@@ -15,7 +15,7 @@ I have never done a my setup post here before, I don&#8217;t think it ever occur
 
 It is not by any stretch perfect, and there are some things that I would like to change but here it is, as of July 2019.
 
-[<img class="alignnone wp-image-515 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-5.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-5.jpg 2000w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-5-300x225.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-5-768x576.jpg 768w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-5-1024x768.jpg 1024w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-5.jpg)
+![Setup Image](/assets/img/2019Setup-5.jpg)
 
 The desk I got from Ikea when I first moved into my house same goes for the chair and bookcase, it is functional and does the job.
 
@@ -27,7 +27,7 @@ The photos on the wall are from some of the tribute bands that I follow. I was l
 
 The laptop is a Lenovo Thinkpad T430 it has a Intel i7 vPro processor with 8GB of ram and a 500GB hard drive. It works perfectly well however the CPU fan is really really noisy when the laptop is busy which is my only complaint &#8211; it will work until I save up to replace it.
 
-[<img class="alignnone wp-image-511 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-2.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-2.jpg 2000w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-2-300x225.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-2-768x576.jpg 768w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-2-1024x768.jpg 1024w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-2.jpg)
+![Setup Image](/assets/img/2019Setup-2.jpg)
 
 ### The Keyboard
 
@@ -35,13 +35,13 @@ The keyboard is the newest addition to the setup, I have been using an Apple Wir
 
 The keyboard is a [Tecknet 88 key mechanical keyboard](https://www.amazon.co.uk/TeckNet-Mechanical-Keyboard-Anti-ghosting-Waterproof/dp/B010IIKHBK/ref=sr_1_1_sspa?keywords=Tecknet+keyboard&qid=1562408012&s=gateway&sr=8-1-spons&psc=1) that I found on Amazon (UK), the reviews were pretty good so after some umming and arring I bought it, it is really loud to type on however the feedback from the keys is amazing, I love to type on this thing and it even has RGB y&#8217;all.
 
-[<img class="alignnone wp-image-512 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-3.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-3.jpg 2000w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-3-300x225.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-3-768x576.jpg 768w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-3-1024x768.jpg 1024w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-3.jpg)
+![Setup Image]/assets/img/2019Setup-3.jpg)
 
 ### The Monitors
 
 The main monitor is a dell 24&#8243; widescreen monitor the monitor to the left of that is an AOC 22&#8243; widescreen monitor. The dell is connected to the laptop using Mini Display port and the AOC is connected using VGA as there are no more Mini Display Ports available on the laptop and I don&#8217;t have a dock that works with the laptop.
 
-[<img class="alignnone wp-image-514 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-4.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-4.jpg 2000w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-4-300x225.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-4-768x576.jpg 768w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-4-1024x768.jpg 1024w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-4.jpg)
+![Setup Image]/assets/img/2019Setup-4.jpg)
 
 ### The Mouse
 
@@ -51,7 +51,7 @@ The mouse is a Logitech M185 Bluetooth mouse that I picked up years ago at the l
 
 Oh hi Harry! &#8211; I used to have a OnePlus 5 with 128GB of memory until it made friends with a local paving slab and smashed. I have been using an old iPhone 6 which only has 16GB of storage which is not ideal however it has been doing me really well, the battery is on the border of not making it through a full day but it is works for now.
 
-[<img class="alignnone wp-image-510 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-1.jpg" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-1.jpg 2000w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-1-300x225.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-1-768x576.jpg 768w, https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-1-1024x768.jpg 1024w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://www.codenameowl.com/wp-content/uploads/2019/07/2019Setup-1.jpg)
+![Setup Image]/assets/img/2019Setup-1.jpg)
 
 ## Software
 
@@ -65,7 +65,7 @@ Editing of code files is done using VS Code, that includes SQL files, PowerShell
 
 The Theme that I am using Is called [Cold Snack](https://github.com/evrowe/vscode-cold-snack), I have the following Extensions Installed [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker), [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens), [IntelliSense for CSS](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion), [Markdown All In One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one).
 
-[<img class="alignnone size-large wp-image-519 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/07/VSCode-1024x605.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/07/VSCode-1024x605.png 1024w, https://www.codenameowl.com/wp-content/uploads/2019/07/VSCode-300x177.png 300w, https://www.codenameowl.com/wp-content/uploads/2019/07/VSCode-768x454.png 768w, https://www.codenameowl.com/wp-content/uploads/2019/07/VSCode.png 1313w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://www.codenameowl.com/wp-content/uploads/2019/07/VSCode.png)
+![Setup Image](/assets/img/VSCode.png)
 
 ### Visual Studio Community 2019
 
