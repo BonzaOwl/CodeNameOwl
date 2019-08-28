@@ -171,7 +171,7 @@ I want to copy all of the database mail configurations from an existing server i
 <pre>   	
 	<code class="ps">
 		Copy-DbaDbMail -source localhost\sql2016 -destination localhost\sql2014<
-	/code>
+	</code>
 </pre>
 
 ![](/assets/img/dba-mail-ssms-2.png)
