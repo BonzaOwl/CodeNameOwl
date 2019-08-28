@@ -90,7 +90,7 @@ Once I had created the master key and certificate I could go ahead and build up 
 
 Once I had the master key, certificate, and Symmetric Key in place I could go ahead and insert some dummy data into our patient&#8217;s table.
 
-[<img class="alignnone size-full wp-image-358 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Initial-Insert.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Initial-Insert.png 880w, https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Initial-Insert-300x80.png 300w, https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Initial-Insert-768x205.png 768w" sizes="(max-width: 880px) 100vw, 880px" />](https://www.codenameowl.com/wp-content/uploads/2019/04/Encryption-Initial-Insert.png)
+[Initial Encryption Insert](/assets/img/Encryption-Initial-Insert.png)
 
 ### Convert
 
