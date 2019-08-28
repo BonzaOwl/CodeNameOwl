@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    {% include header.html %} 
+
+  <body>
+
+      {% include nav.html %}
+
+      <article class="article" id="post-<?php the_ID(); ?>">
+          <div class="container">
+              <header class="single-header">
+                  <h1>{{ page.title }}</h1>
+      
+                  <div class="date">
+      
+                      <span class="home-post-date" style="display:inline">
+                          <time>Posted: {{ page.date | date: "%B %-d, %Y"  }}</time>
+                      </span>
+                      {% for category in page.categories %}
+                       <span class="category-high"> 
+                        {{ category }} 
+                      </span> 
+                      {% endfor %}
+                  </div>
+      
+              </header>
+      
+              {{content}}     
+              
+      
+          </div>
+      </article>
+
+      {% include footer.html %}
+      
+</body>
+</html>

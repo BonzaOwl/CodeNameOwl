@@ -1,0 +1,36 @@
+<div class="row">
+        <div class="col-xs-6 col-md-12 col-lg-12">
+          <div class="latest-posts"
+            style="margin-top: 40px; background-color: #f2f2f2; border-radius: 5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;padding-top: .75rem; padding-bottom: .75rem">
+            <h2>Latest PowerShell Posts</h2>
+            <section>
+              <!--https://stackoverflow.com/questions/20924471/for-loop-wrap-every-two-posts-in-a-div-->
+              {% for post in site.categories.powershell limit: 5 %}
+              <div class="home-post"
+                style="background: #ffd17e;padding:.75rem;margin-top: .75rem;margin-bottom: .75rem;margin-left: .75rem;margin-right: .75rem;border-radius:4px;">
+
+
+                <span class="home-post-date" style="display:inline">
+                  <time>Posted: {{ post.date | date: "%B %-d, %Y"  }}</time>
+                </span>
+
+                <span class="single-category mobile-hide" style="display:inline">
+
+                    {% for category in post.categories %}
+                  <span class="category-high"> {{category}} </span>
+                  {%endfor%}
+                </span>
+
+                <a href="{{ post.url }}">
+                  <div class="home-post-title">{{ post.title }}</div>
+                </a>
+
+              </div>
+              {% endfor %}
+
+              {% include allpostslnk.html %} 
+
+            </section>
+          </div>
+        </div>
+      </div>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+{% include header.html %}
+
+<body>
+
+  {% include nav.html %}
+
+  <div class="container">
+
+    <div class="main-content">
+
+      <!-- The main site title -->
+      <!--<h1 class="site-title">{{ page.title }}</h1>-->
+
+      <!--The site description, fed from the site settings -->
+      <!--<h5></h5>-->
+
+      {% for post in site.posts %}
+      <div class="home-post"
+        style="background: #ffd17e;padding:.75rem;margin-top: .75rem;margin-bottom: .75rem;margin-left: .75rem;margin-right: .75rem;border-radius:4px;">
+
+
+        <span class="home-post-date" style="display:inline">
+          <time>Posted: {{ post.date | date: "%B %-d, %Y"  }}</time>
+        </span>
+
+        <span class="single-category mobile-hide" style="display:inline">
+
+          {% for category in post.categories %}
+          <span class="category-high"> {{category}} </span>
+          {%endfor%}
+        </span>
+
+        <a href="{{ post.url }}">
+          <div class="home-post-title">{{ post.title }}</div>
+        </a>
+
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+  {% include footer.html %}
+
+</body>
+
+</html>
