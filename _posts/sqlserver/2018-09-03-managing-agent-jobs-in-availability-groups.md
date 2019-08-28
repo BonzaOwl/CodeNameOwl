@@ -324,7 +324,7 @@ Next, from the new job window, select Steps from the Select a page pane on the r
 
 From the side panel, of the New Job window, select Schedules, then click New
 
-![]("/assets/img/Availability_Groups_And_Server_Agents_08.jpg")
+![](/assets/img/Availability_Groups_And_Server_Agents_08.jpg)
 
 1. Enter a name for the step, I have called mine Every Minute
 
@@ -334,7 +334,7 @@ From the side panel, of the New Job window, select Schedules, then click New
 
 4. Once you are happy Click Ok
 
-![]("/assets/img/Availability_Groups_And_Server_Agents_09.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_09.jpg)
 
 Finally, select the Notifications page from the side bar on the New Job window.
 
