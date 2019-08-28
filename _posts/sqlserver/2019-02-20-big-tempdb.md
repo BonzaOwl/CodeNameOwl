@@ -215,7 +215,7 @@ You can also delete the Extended Event using the following T-SQL, this however _
 
 Now that we have some data in the output file(s) which should look like (below) in the location you specified;
 
-![]("/assets/img/tempdb_event_log.png")
+![](/assets/img/tempdb_event_log.png)
   
   <p id="caption-attachment-188" class="wp-caption-text">
     The output files as shown on disk
@@ -224,7 +224,7 @@ Now that we have some data in the output file(s) which should look like (below) 
 
 We can go ahead and have a look at the results. The Extended Event Log File(s) are essentially just XML so we can shed them in SQL Server Management Studio just like we would XML to get the information from them into a column based results table.
 
-![]("/assets/img/TempDB_ExtendedEvent_Shred_ExampleOut.png")
+![](/assets/img/TempDB_ExtendedEvent_Shred_ExampleOut.png)
   
   <p id="caption-attachment-194" class="wp-caption-text">
     Taken from my pre-analysis testing.
