@@ -150,7 +150,7 @@ _**Note:**_ This project is available in full over on [Git Hub](https://github.c
 
 The first sketch that I did was a mapping of the tables, It didn&#8217;t include any of the data types, what I decided to do was to map out the columns on paper, transfer that into Google Sheets and map the data types to the columns there.
 
-[<img class="alignnone wp-image-309 size-full img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/F1-Database-Design-e1554396726682.jpg" alt="Rough sketch of the database design" srcset="https://www.codenameowl.com/wp-content/uploads/2019/04/F1-Database-Design-e1554396726682.jpg 2000w, https://www.codenameowl.com/wp-content/uploads/2019/04/F1-Database-Design-e1554396726682-300x225.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2019/04/F1-Database-Design-e1554396726682-768x576.jpg 768w, https://www.codenameowl.com/wp-content/uploads/2019/04/F1-Database-Design-e1554396726682-1024x768.jpg 1024w" sizes="(max-width: 2000px) 100vw, 2000px" />](https://www.codenameowl.com/wp-content/uploads/2019/04/F1-Database-Design-e1554396726682.jpg)
+![](/assets/img/F1-Database-Design-e1554396726682.jpg)
 
 Once the initial drawing of the table structure was done I completed the mapping of the table data types below are all of the final data types and mappings that I came up with in Google Sheets, it outlines everything that I will need for Part Two, which is where the actual schema will be written.
 
@@ -1387,7 +1387,7 @@ Once the initial drawing of the table structure was done I completed the mapping
 
 I sketched out a very rough drawing of what I wanted the web application to look like, as you can see it is going to be very simple, made up of just two pages, a submissions page and a results page which can be accessed from either of the pages, each page will have two buttons, one at the top of the page and one at the bottom, the submission page will be made up of a web form
 
-[<img class="alignnone wp-image-330 size-full img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/F1-Application-Design-e1554537605263.jpg" alt="Rough sketch of the application design" srcset="https://www.codenameowl.com/wp-content/uploads/2019/04/F1-Application-Design-e1554537605263.jpg 1000w, https://www.codenameowl.com/wp-content/uploads/2019/04/F1-Application-Design-e1554537605263-300x225.jpg 300w, https://www.codenameowl.com/wp-content/uploads/2019/04/F1-Application-Design-e1554537605263-768x576.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" />](https://www.codenameowl.com/wp-content/uploads/2019/04/F1-Application-Design.jpg)
+![](/assets/img/F1-Application-Design.jpg)
 
 <span style="font-weight: 400;">As outlined in our requirements the application needs to be simple, responsive and fast loading, with that in mind we are going to make use of <a href="https://getbootstrap.com">Bootstrap</a>, specifically version 4. </span>
 
@@ -1395,6 +1395,6 @@ I sketched out a very rough drawing of what I wanted the web application to look
 
 <span style="font-weight: 400;">This is what the pages will look like;</span>
 
-[<img class="alignnone wp-image-343 size-full img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/Formula-One-Race-Tracker-Submission-Initial.png" alt="Initial design of the race results submission page" srcset="https://www.codenameowl.com/wp-content/uploads/2019/04/Formula-One-Race-Tracker-Submission-Initial.png 557w, https://www.codenameowl.com/wp-content/uploads/2019/04/Formula-One-Race-Tracker-Submission-Initial-291x300.png 291w" sizes="(max-width: 557px) 100vw, 557px" />](https://www.codenameowl.com/wp-content/uploads/2019/04/Formula-One-Race-Tracker-Submission-Initial.png)
+![](/assets/img/Formula-One-Race-Tracker-Submission-Initial.png)
 
-[<img class="alignnone wp-image-344 size-full img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/Formula-One-Race-Tracker-Results-Initial.png" alt="Initial Design Of The Race Results Page" srcset="https://www.codenameowl.com/wp-content/uploads/2019/04/Formula-One-Race-Tracker-Results-Initial.png 549w, https://www.codenameowl.com/wp-content/uploads/2019/04/Formula-One-Race-Tracker-Results-Initial-300x239.png 300w" sizes="(max-width: 549px) 100vw, 549px" />](https://www.codenameowl.com/wp-content/uploads/2019/04/Formula-One-Race-Tracker-Results-Initial.png)
+![](/assets/img/Formula-One-Race-Tracker-Results-Initial.png)

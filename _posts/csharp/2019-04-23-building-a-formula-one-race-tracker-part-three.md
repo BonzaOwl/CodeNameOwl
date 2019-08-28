@@ -27,76 +27,76 @@ Stored Procedures are going to power the flow of data in and out of the Formula 
 In [Part Two](https://www.codenameowl.com/building-a-formula-one-race-tracker-part-two) I showed how I built the database schema for the race tracker, I now know which tables relate to which and what columns I have available, now I need to produce a stored procedure that will allow the web application to insert data into the database.
 
 <pre> 
-<code class="sql">
--- =============================================
--- Author:      Bonza Owl
--- Create date: 5.4.18
--- Description: Inserts race data into database
--- =============================================
-CREATE PROCEDURE [dbo].[Insert_Race_Data]
+    <code class="sql">
+        -- =============================================
+        -- Author:      Bonza Owl
+        -- Create date: 5.4.18
+        -- Description: Inserts race data into database
+        -- =============================================
+        CREATE PROCEDURE [dbo].[Insert_Race_Data]
 
-@Race_Date DATETIME,
-@Driver_ID INT,
-@Circuit_ID INT,    
-@Final_Position TINYINT,
-@Points INT,
-@Race_Type TINYINT,
-@State INT = 0 OUTPUT
+        @Race_Date DATETIME,
+        @Driver_ID INT,
+        @Circuit_ID INT,    
+        @Final_Position TINYINT,
+        @Points INT,
+        @Race_Type TINYINT,
+        @State INT = 0 OUTPUT
 
-AS
-BEGIN
-    SET NOCOUNT ON;
-    SET XACT_ABORT,
-        QUOTED_IDENTIFIER,
-        ANSI_NULLS,
-        ANSI_PADDING,
-        ANSI_WARNINGS,
-        ARITHABORT,
-        CONCAT_NULL_YIELDS_NULL ON;
-    SET NUMERIC_ROUNDABORT OFF;
+        AS
+        BEGIN
+            SET NOCOUNT ON;
+            SET XACT_ABORT,
+                QUOTED_IDENTIFIER,
+                ANSI_NULLS,
+                ANSI_PADDING,
+                ANSI_WARNINGS,
+                ARITHABORT,
+                CONCAT_NULL_YIELDS_NULL ON;
+            SET NUMERIC_ROUNDABORT OFF;
 
-    DECLARE @localTran bit
-    IF @@TRANCOUNT = 0
-    BEGIN
-        SET @localTran = 1
-        BEGIN TRANSACTION LocalTran 
-    END
+            DECLARE @localTran bit
+            IF @@TRANCOUNT = 0
+            BEGIN
+                SET @localTran = 1
+                BEGIN TRANSACTION LocalTran 
+            END
 
-    BEGIN TRY       		
+            BEGIN TRY       		
 
-        INSERT INTO Race 
-        (
-        Race_Date,
-        Driver_ID,		
-        Circuit_ID,    
-        Final_Position,
-        Race_Type,
-	Points
-        )
-        VALUES
-        (
-            @Race_Date,
-            @Driver_ID,			
-            @Circuit_ID,
-            @Final_Position,
-            @Race_Type,
-	    @Points
-        );
+                INSERT INTO Race 
+                (
+                Race_Date,
+                Driver_ID,		
+                Circuit_ID,    
+                Final_Position,
+                Race_Type,
+            Points
+                )
+                VALUES
+                (
+                    @Race_Date,
+                    @Driver_ID,			
+                    @Circuit_ID,
+                    @Final_Position,
+                    @Race_Type,
+                @Points
+                );
 
-        COMMIT TRANSACTION LocalTran;
+                COMMIT TRANSACTION LocalTran;
 
-		SET @State = 1;
+                SET @State = 1;
 
-    END TRY
-    BEGIN CATCH        
- 
-        IF @localTran = 1 AND XACT_STATE() &lt;&gt; 0
-            ROLLBACK TRAN LocalTran
- 
-    END CATCH
+            END TRY
+            BEGIN CATCH        
+        
+                IF @localTran = 1 AND XACT_STATE() &lt;&gt; 0
+                    ROLLBACK TRAN LocalTran
+        
+            END CATCH
 
-END
-</code>
+        END
+    </code>
 </pre>
 
 To explain how the above stored procedure works I will break it down.
@@ -128,8 +128,8 @@ At the top, there are 7 parameters above the **AS,** these are parameters that t
   7. State &#8211; If the insert was successful this will be 1 if it wasn&#8217;t it will be 0, State is passed back to the application to let the user know if the procedure completed successfully.
 
 <pre> 
-<code class="sql">
-    DECLARE @localTran bit
+    <code class="sql">
+        DECLARE @localTran bit
         IF @@TRANCOUNT = 0
         BEGIN
             SET @localTran = 1
@@ -141,45 +141,45 @@ At the top, there are 7 parameters above the **AS,** these are parameters that t
 In the above code block, I have declared a variable called @localtran as a BIT datatype, I have then asked SQL Server inside an IF statement that if @localtran = 0 please set @localtran to 1 and Begin a new transaction called LocalTran, if however the stored procedure is called and @localtran is not 0 the stored procedure will fail as a transaction is already open.
 
 <pre> 
-<code class="sql">
-BEGIN TRY       		
+    <code class="sql">
+        BEGIN TRY       		
 
-        INSERT INTO Race 
-        (
-        Race_Date,
-        Driver_ID,		
-        Circuit_ID,    
-        Final_Position,
-        Race_Type,
-	Points
-        )
-        VALUES
-        (
-            @Race_Date,
-            @Driver_ID,			
-            @Circuit_ID,
-            @Final_Position,
-            @Race_Type,
-	    @Points
-        );
+                INSERT INTO Race 
+                (
+                Race_Date,
+                Driver_ID,		
+                Circuit_ID,    
+                Final_Position,
+                Race_Type,
+            Points
+                )
+                VALUES
+                (
+                    @Race_Date,
+                    @Driver_ID,			
+                    @Circuit_ID,
+                    @Final_Position,
+                    @Race_Type,
+                @Points
+                );
 
-        COMMIT TRANSACTION LocalTran;
-	SET @State = 1;
+                COMMIT TRANSACTION LocalTran;
+            SET @State = 1;
     </code>
 </pre>
 
 The above code block is going to first tell SQL Server that I am now going to try and insert the data which was passed in using the variables at the top of the procedure into the Race table, if successful the transaction will be committed and @State will be set to 1, if however, it was not successful, the TRY will fall through to the CATCH and @State will be left as 0
 
 <pre> 
-<code class="sql">
-END TRY
-    BEGIN CATCH
- 
-        IF @localTran = 1 AND XACT_STATE() &lt;&gt; 0
-            ROLLBACK TRAN LocalTran
- 
-    END CATCH
-</code>
+    <code class="sql">
+        END TRY
+            BEGIN CATCH
+        
+                IF @localTran = 1 AND XACT_STATE() &lt;&gt; 0
+                    ROLLBACK TRAN LocalTran
+        
+            END CATCH
+    </code>
 </pre>
 
 The above code block is where we tell SQL Server what we want to do in the event of an error being thrown inside the TRY.
@@ -195,31 +195,31 @@ As I showed in <a href="https://www.codenameowl.com/building-a-formula-one-race-
 Each of the stored procedures for returning data will be built up using the following framework.
 
 <pre> 
-<code class="sql">
-- =============================================
--- Author:      Bonza Owl
--- Create date: 5.4.18
--- Description: Returns all race types
--- =============================================
+    <code class="sql">
+        - =============================================
+        -- Author:      Bonza Owl
+        -- Create date: 5.4.18
+        -- Description: Returns all race types
+        -- =============================================
 
-CREATE PROCEDURE [dbo].[Get_Race_Types]
+        CREATE PROCEDURE [dbo].[Get_Race_Types]
 
-AS
-BEGIN
-    SET NOCOUNT ON;
-    SET XACT_ABORT,
-        QUOTED_IDENTIFIER,
-        ANSI_NULLS,
-        ANSI_PADDING,
-        ANSI_WARNINGS,
-        ARITHABORT,
-        CONCAT_NULL_YIELDS_NULL ON;
-    SET NUMERIC_ROUNDABORT OFF;	    
-	
-	CODE HERE
+        AS
+        BEGIN
+            SET NOCOUNT ON;
+            SET XACT_ABORT,
+                QUOTED_IDENTIFIER,
+                ANSI_NULLS,
+                ANSI_PADDING,
+                ANSI_WARNINGS,
+                ARITHABORT,
+                CONCAT_NULL_YIELDS_NULL ON;
+            SET NUMERIC_ROUNDABORT OFF;	    
+            
+            CODE HERE
 
-END
-</code>
+        END
+    </code>
 </pre>
 
 At the top there is a comments block, this is where I usually like to put my name, the date the procedure was first introduced and then a short description about its use, it is useful if I return to this project in 12 months to have an understanding of what each procedure does.
@@ -246,38 +246,38 @@ Get race types is the stored procedure that returns all of the race types to the
 This is just a simple select with returning all values in the Race_Types table.
 
 <pre> 
-<code class="sql">
-- =============================================
--- Author:      Bonza Owl
--- Create date: 5.4.18
--- Description: Returns all race types
--- =============================================
+    <code class="sql">
+        - =============================================
+        -- Author:      Bonza Owl
+        -- Create date: 5.4.18
+        -- Description: Returns all race types
+        -- =============================================
 
-CREATE PROCEDURE [dbo].[Get_Race_Types]
+        CREATE PROCEDURE [dbo].[Get_Race_Types]
 
-AS
-BEGIN
-    SET NOCOUNT ON;
-    SET XACT_ABORT,
-        QUOTED_IDENTIFIER,
-        ANSI_NULLS,
-        ANSI_PADDING,
-        ANSI_WARNINGS,
-        ARITHABORT,
-        CONCAT_NULL_YIELDS_NULL ON;
-    SET NUMERIC_ROUNDABORT OFF;	    
-	
-	SELECT 
-		R.Race_Type_ID,
-		R.Race_Type
-	FROM
-	Race_Types R
+        AS
+        BEGIN
+            SET NOCOUNT ON;
+            SET XACT_ABORT,
+                QUOTED_IDENTIFIER,
+                ANSI_NULLS,
+                ANSI_PADDING,
+                ANSI_WARNINGS,
+                ARITHABORT,
+                CONCAT_NULL_YIELDS_NULL ON;
+            SET NUMERIC_ROUNDABORT OFF;	    
+            
+            SELECT 
+                R.Race_Type_ID,
+                R.Race_Type
+            FROM
+            Race_Types R
 
-END
-</code>
+        END
+    </code>
 </pre>
 
-[<img class="alignnone size-full wp-image-391 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/Race_Types_Table_Output.png" alt="" />](https://www.codenameowl.com/wp-content/uploads/2019/04/Race_Types_Table_Output.png)
+![](/assets/img/Race_Types_Table_Output.png)
 
 #### Get Circuits
 
@@ -286,148 +286,148 @@ Exactly the same as Race\_Types, Get\_Circuits will just return a list of curren
 In the select, I have returned both the name of the Circuit and the Circuit ID as the Circuit ID is what I need to send back to the database on submission of the web form, but we will come to that in more detail in a later section.
 
 <pre> 
-<code class="sql">
--- =============================================
--- Author:      Bonza Owl
--- Create date: 5.4.18
--- Description: Returns all circuits
--- =============================================
+    <code class="sql">
+        -- =============================================
+        -- Author:      Bonza Owl
+        -- Create date: 5.4.18
+        -- Description: Returns all circuits
+        -- =============================================
 
-CREATE PROCEDURE [dbo].[Get_Circuits]
+        CREATE PROCEDURE [dbo].[Get_Circuits]
 
-AS
-BEGIN
-    SET NOCOUNT ON;
-    SET XACT_ABORT,
-        QUOTED_IDENTIFIER,
-        ANSI_NULLS,
-        ANSI_PADDING,
-        ANSI_WARNINGS,
-        ARITHABORT,
-        CONCAT_NULL_YIELDS_NULL ON;
-    SET NUMERIC_ROUNDABORT OFF;	 
-	
-	SELECT 
+        AS
+        BEGIN
+            SET NOCOUNT ON;
+            SET XACT_ABORT,
+                QUOTED_IDENTIFIER,
+                ANSI_NULLS,
+                ANSI_PADDING,
+                ANSI_WARNINGS,
+                ARITHABORT,
+                CONCAT_NULL_YIELDS_NULL ON;
+            SET NUMERIC_ROUNDABORT OFF;	 
+            
+            SELECT 
 
-		C.Circuit_ID,
-		C.Grands_Prix_Name as Circuit_Name
-		
-	FROM
-		Circuit C
+                C.Circuit_ID,
+                C.Grands_Prix_Name as Circuit_Name
+                
+            FROM
+                Circuit C
 
-    ORDER BY 
-        Circuit_Name
-END
-</code>
+            ORDER BY 
+                Circuit_Name
+        END
+    </code>
 </pre>
 
-[<img class="alignnone size-full wp-image-392 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/Circuit_Table_Output.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/04/Circuit_Table_Output.png 322w, https://www.codenameowl.com/wp-content/uploads/2019/04/Circuit_Table_Output-207x300.png 207w" sizes="(max-width: 322px) 100vw, 322px" />](https://www.codenameowl.com/wp-content/uploads/2019/04/Circuit_Table_Output.png)
+![](/assets/img/Circuit_Table_Output.png)
 
 #### Get Drivers
 
 Get_Drivers is slightly different, it only returns drivers that have not retired because I don&#8217;t want to record times against drivers who are no longer racing, it would be pointless. The driver name is concatenated together and returned as DriverName so the user of the web application knows who it is they are selecting when completing the form.
 
 <pre> 
-<code class="sql">
--- =============================================
--- Author:      Bonza Owl
--- Create date: 5.4.18
--- Description: Returns all drivers
--- =============================================
+    <code class="sql">
+        -- =============================================
+        -- Author:      Bonza Owl
+        -- Create date: 5.4.18
+        -- Description: Returns all drivers
+        -- =============================================
 
-CREATE PROCEDURE [dbo].[Get_Drivers]
+        CREATE PROCEDURE [dbo].[Get_Drivers]
 
-AS
-BEGIN
-    SET NOCOUNT ON;
-    SET XACT_ABORT,
-        QUOTED_IDENTIFIER,
-        ANSI_NULLS,
-        ANSI_PADDING,
-        ANSI_WARNINGS,
-        ARITHABORT,
-        CONCAT_NULL_YIELDS_NULL ON;
-    SET NUMERIC_ROUNDABORT OFF;	 
-	
-	SELECT 
-		D.Driver_ID,
-		D.Forename + ' ' + D.Surname as DriverName
-	FROM
-		Drivers D
-    WHERE 
-        D.Retired = 0
-	ORDER BY
-		DriverName
-END
-</code>
+        AS
+        BEGIN
+            SET NOCOUNT ON;
+            SET XACT_ABORT,
+                QUOTED_IDENTIFIER,
+                ANSI_NULLS,
+                ANSI_PADDING,
+                ANSI_WARNINGS,
+                ARITHABORT,
+                CONCAT_NULL_YIELDS_NULL ON;
+            SET NUMERIC_ROUNDABORT OFF;	 
+            
+            SELECT 
+                D.Driver_ID,
+                D.Forename + ' ' + D.Surname as DriverName
+            FROM
+                Drivers D
+            WHERE 
+                D.Retired = 0
+            ORDER BY
+                DriverName
+        END
+    </code>
 </pre>
 
-[<img class="alignnone size-full wp-image-393 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/Driver_Table_Output.png" alt="" srcset="https://www.codenameowl.com/wp-content/uploads/2019/04/Driver_Table_Output.png 203w, https://www.codenameowl.com/wp-content/uploads/2019/04/Driver_Table_Output-142x300.png 142w" sizes="(max-width: 203px) 100vw, 203px" />](https://www.codenameowl.com/wp-content/uploads/2019/04/Driver_Table_Output.png)
+![](/assets/img/Driver_Table_Output.png)
 
 #### Get Results
 
 Get_Results will power the Grid View that will show us the current runnings of the race season.
 
 <pre> 
-<code class="sql">
--- =============================================
--- Author:      Bonza Owl
--- Create date: 5.4.18
--- Description: Returns all results
--- =============================================
+    <code class="sql">
+        -- =============================================
+        -- Author:      Bonza Owl
+        -- Create date: 5.4.18
+        -- Description: Returns all results
+        -- =============================================
 
-CREATE PROCEDURE [dbo].[Get_Results]
+        CREATE PROCEDURE [dbo].[Get_Results]
 
-AS
-BEGIN
-    SET NOCOUNT ON;
-    SET XACT_ABORT,
-        QUOTED_IDENTIFIER,
-        ANSI_NULLS,
-        ANSI_PADDING,
-        ANSI_WARNINGS,
-        ARITHABORT,
-        CONCAT_NULL_YIELDS_NULL ON;
-    SET NUMERIC_ROUNDABORT OFF;	 
+        AS
+        BEGIN
+            SET NOCOUNT ON;
+            SET XACT_ABORT,
+                QUOTED_IDENTIFIER,
+                ANSI_NULLS,
+                ANSI_PADDING,
+                ANSI_WARNINGS,
+                ARITHABORT,
+                CONCAT_NULL_YIELDS_NULL ON;
+            SET NUMERIC_ROUNDABORT OFF;	 
 
-	SELECT DISTINCT
-		D.Forename + ' ' + D.Surname as DriverName,
-		T.Team_Name,
-		SUM(R.Points) as Points
+            SELECT DISTINCT
+                D.Forename + ' ' + D.Surname as DriverName,
+                T.Team_Name,
+                SUM(R.Points) as Points
 
-	FROM Race R
+            FROM Race R
 
-	INNER JOIN Driver_Team DT ON 
-		DT.Driver_ID = R.Driver_ID
-		AND End_Date IS NULL --We only want current drivers for this team
+            INNER JOIN Driver_Team DT ON 
+                DT.Driver_ID = R.Driver_ID
+                AND End_Date IS NULL --We only want current drivers for this team
 
-	INNER JOIN Teams T ON 
-		T.Team_ID = DT.Team_ID 
-		AND T.Active = 1 --We only want active teams
+            INNER JOIN Teams T ON 
+                T.Team_ID = DT.Team_ID 
+                AND T.Active = 1 --We only want active teams
 
-	INNER JOIN Drivers D ON 
-		D.Driver_ID = DT.Driver_ID
-		AND D.Retired = 0 --We don't want drivers that have retired
+            INNER JOIN Drivers D ON 
+                D.Driver_ID = DT.Driver_ID
+                AND D.Retired = 0 --We don't want drivers that have retired
 
-	WHERE 
-		YEAR(Race_Date) = YEAR(GETDATE()) --We just want this season
+            WHERE 
+                YEAR(Race_Date) = YEAR(GETDATE()) --We just want this season
 
-	GROUP BY 
-		D.Forename,
-		D.Surname,
-		T.Team_Name
-END
-</code>
+            GROUP BY 
+                D.Forename,
+                D.Surname,
+                T.Team_Name
+        END
+    </code>
 </pre>
 
 It is slightly larger than the other get procedures so I will break it down.
 
 <pre> 
-<code class="sql">
-SELECT DISTINCT
-	D.Forename + ' ' + D.Surname as DriverName,
-	T.Team_Name,
-	SUM(R.Points) as Points
+    <code class="sql">
+        SELECT DISTINCT
+            D.Forename + ' ' + D.Surname as DriverName,
+            T.Team_Name,
+            SUM(R.Points) as Points
     </code>
 </pre>
 
@@ -438,43 +438,43 @@ The select statement requests the following data
   * Points from the race table, this produces a total sum of all values however, I will need to specify some additional parameters in the were clause and group by for this to work as I want.
 
 <pre> 
-<code class="sql">
-INNER JOIN Driver_Team DT ON 
-	DT.Driver_ID = R.Driver_ID
-	AND DT.End_Date IS NULL --We only want current drivers for this team
+    <code class="sql">
+        INNER JOIN Driver_Team DT ON 
+            DT.Driver_ID = R.Driver_ID
+            AND DT.End_Date IS NULL --We only want current drivers for this team
     </code>
 </pre>
 
 To ensure that I get the data returned correctly, I need to join the driver\_team table, to do this I am joining on the driverID in both the driver\_team table and Race table additionally I have specified that I only want results returned where End\_date on the Driver\_Team table is NULL so the driver is currently driving for the team returned.
 
 <pre> 
-<code class="sql">
-INNER JOIN Teams T ON 
-	T.Team_ID = DT.Team_ID 
-	AND T.Active = 1 --We only want active teams
-</code>
+    <code class="sql">
+        INNER JOIN Teams T ON 
+            T.Team_ID = DT.Team_ID 
+            AND T.Active = 1 --We only want active teams
+    </code>
 </pre>
 
 Now that the Driver\_Team table is joined to the race table the team can be obtained and returned, this is done by joining the TeamID to the TeamID in the Driver\_Team table, however, I have specified that I only want active teams.
 
 <pre> 
-<code class="sql">
-INNER JOIN Drivers D ON 
-	D.Driver_ID = DT.Driver_ID
-	AND D.Retired = 0 --We don't want drivers that have retired
-</code>
+    <code class="sql">
+        INNER JOIN Drivers D ON 
+            D.Driver_ID = DT.Driver_ID
+            AND D.Retired = 0 --We don't want drivers that have retired
+    </code>
 </pre>
 
 Finally, the driver&#8217;s table is joined to the driver_team table to get the drivers name and current state, I have specified in the join that I only want drivers, where retired is 0, this will ensure any previous drivers from previous seasons that have retired are not returned.
 
 <pre> 
-<code class="sql">
-WHERE YEAR(Race_Date) = YEAR(GETDATE()) --We just want this season
+    <code class="sql">
+        WHERE YEAR(Race_Date) = YEAR(GETDATE()) --We just want this season
 
-GROUP BY 
-	D.Forename,
-	D.Surname,
-	T.Team_Name
+        GROUP BY 
+            D.Forename,
+            D.Surname,
+            T.Team_Name
     </code>
 </pre>
 
@@ -484,4 +484,4 @@ Finally, the data is then grouped, first by driver forename, then driver surname
 
 This should return something like this;
 
-[<img class="alignnone size-full wp-image-394 img-fluid " src="https://www.codenameowl.com/wp-content/uploads/2019/04/Race_Results_Output.png" alt="" />](https://www.codenameowl.com/wp-content/uploads/2019/04/Race_Results_Output.png)
+![](/assets/img/Race_Results_Output.png)

@@ -16,9 +16,9 @@ tags:
 Recently I was writing a login process that required me to query Active Directory, admittedly something I have never done before, I took to the internet to search for a solution on how this was going to work and came across the following query string to use within my existing class.
 
 <pre> 
-<code class="csharp">
-search.Filter = "(&(objectCategory=person)(objectClass=user)(anr=" + Username + ")(!userAccountControl:1.2.840.113556.1.4.803:=2))";
-</code>
+  <code class="csharp">
+    search.Filter = "(&(objectCategory=person)(objectClass=user)(anr=" + Username + ")(!userAccountControl:1.2.840.113556.1.4.803:=2))";
+  </code>
 </pre>
 
 I set to test this with multiple users, and it worked perfectly, the correct data was returned in 100% of the test cases that I had tried, so the code got moved into production and signed off.
@@ -37,26 +37,26 @@ Here is the code I was using, The search filter is going to look for the followi
 As i was using **search.FindOne** It will only return the first result it finds.
 
 <pre> 
-<code class="csharp">
-  public static string Fname(string Username)
-  {
-      DirectoryEntry entry = new DirectoryEntry();
-      DirectorySearcher search = new DirectorySearcher(entry);
+  <code class="csharp">
+    public static string Fname(string Username)
+    {
+        DirectoryEntry entry = new DirectoryEntry();
+        DirectorySearcher search = new DirectorySearcher(entry);
 
-      search.Filter = "(&(objectCategory=person)(objectClass=user)(anr=" + Username + ")(!userAccountControl:1.2.840.113556.1.4.803:=2))";
+        search.Filter = "(&(objectCategory=person)(objectClass=user)(anr=" + Username + ")(!userAccountControl:1.2.840.113556.1.4.803:=2))";
 
-      search.PropertiesToLoad.Add("givenName");   // first name
+        search.PropertiesToLoad.Add("givenName");   // first name
 
-      SearchResult result = search.FindOne();
+        SearchResult result = search.FindOne();
 
-      string Firstname = string.Empty;
+        string Firstname = string.Empty;
 
-      if (result.Properties["givenName"].Count &gt; 0)
-      {
-          Firstname = result.Properties["givenName"][0] as String;
-      }
-      return Firstname;
-  }
+        if (result.Properties["givenName"].Count &gt; 0)
+        {
+            Firstname = result.Properties["givenName"][0] as String;
+        }
+        return Firstname;
+    }
   </code>
 </pre>
 
