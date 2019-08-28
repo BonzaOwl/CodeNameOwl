@@ -90,7 +90,7 @@ Once I had created the master key and certificate I could go ahead and build up 
 
 Once I had the master key, certificate, and Symmetric Key in place I could go ahead and insert some dummy data into our patient&#8217;s table.
 
-[Initial Encryption Insert](/assets/img/Encryption-Initial-Insert.png)
+![Initial Encryption Insert](/assets/img/Encryption-Initial-Insert.png)
 
 ### Convert
 
