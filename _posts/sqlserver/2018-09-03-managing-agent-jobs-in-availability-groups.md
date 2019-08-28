@@ -286,27 +286,27 @@ Your going to need to create a SQL Server Agent Job that will call the stored pr
 
 Let&#8217;s show you how to do that then yeah?
 
-![](/assets/img/Availability_Groups_And_Server_Agents_00-300x199.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_00.jpg)
 
 First, On the object explorer in SQL Management Studio expand the SQL Server Agent by clicking the +
 
-![](/assets/img/Availability_Groups_And_Server_Agents_01-300x282.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_01.jpg)
 
 Next, you will see a bunch of folders appear, one of which is called Jobs, right-click that
 
-![](/assets/img/Availability_Groups_And_Server_Agents_02-246x300.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_02.jpg)
 
 A context menu will appear, from this menu select New Job.
 
-![](/assets/img/Availability_Groups_And_Server_Agents_03-300x272.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_03.jpg)
 
 This will launch a new window where we can setup our job, enter a name in the name field, I have gone ahead and called mine Availability Member Check, you can call it whatever you want, I have also changed the Owner to sa (I have renamed my sa account)
 
-![](/assets/img/Availability_Groups_And_Server_Agents_04-300x272.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_04.jpg)
 
 Next, from the new job window, select Steps from the Select a page pane on the right-hand side of the window. Once you have clicked Steps from the bottom select New.
 
-![](/assets/img/Availability_Groups_And_Server_Agents_06-300x272.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_06.jpg)
 
 1. Enter a name for the step, I call called this Run Stored Procedure  
 2. Choose the Database in which the stored procedure lives in, DBA_Tasks should exist if you have followed this post all the way, if not select your utility database.  
@@ -320,7 +320,7 @@ Next, from the new job window, select Steps from the Select a page pane on the r
 
 4. Once you have completed that, Click OK
 
-![](/assets/img/Availability_Groups_And_Server_Agents_07-300x272.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_07.jpg)
 
 From the side panel, of the New Job window, select Schedules, then click New
 
