@@ -2,6 +2,7 @@
 title: Moving To Jekyll
 date: 2019-08-29T19:17:13+01:00
 author: BonzaOwl
+permalink: /moving-to-jekyll
 layout: post
 categories:
   - Personal
