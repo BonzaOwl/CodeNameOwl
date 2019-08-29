@@ -12,6 +12,7 @@ tags:
   - story
   - T-SQL Tuesday
 ---
+
 ![](/assets/img/T-SQL-Tuesday-Logo.jpg)
 
 This month&#8217;s T-SQL Tuesday comes from Todd Kleinhans ([Blog](https://toddkleinhans.wordpress.com/) & [Twitter](http://www.twitter.com/toddkleinhans)) he asked, &#8220;what do YOU use databases for in your personal life?&#8221;
@@ -40,9 +41,9 @@ The database may not be 100% perfect, I am almost certain there is room for impr
 
 The joys with this project are there are so many different avenues for data collection within the topic of Veganism
 
-  * Food
-  * Cosmetics
-  * Clothing
-  * Restaurants
+- Food
+- Cosmetics
+- Clothing
+- Restaurants
 
 To name but a few, so the database will certainly grow as there is more data added, at the moment I am adding all of the data manually through a stored procedure, it would be useful to create an input form to handle all of that but that is a topic for another post.

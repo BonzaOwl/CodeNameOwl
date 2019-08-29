@@ -14,6 +14,7 @@ tags:
   - SQLAgent
   - StoredProcedure
 ---
+
 Availability groups and SQL Server Agent Jobs, how do you go about managing them? In our environment we have two availability group members, for the purposes of this post we will call them S1 and S2 one is always primary and the other is the read-only secondary if the availability group fails over the roles will change, but you knew that right?
 
 So **S1** is the primary and **S2** is the secondary, I had a number of SQL Server Agent jobs that existed on both members, the job would run on both members but always fail on the secondary, as my jobs are setup to alert when the job fails we were getting alerted that the job had failed on S2 but really it hadn&#8217;t it just wasn&#8217;t able to run on S2 because that was in a read-only state.
@@ -21,8 +22,6 @@ So **S1** is the primary and **S2** is the secondary, I had a number of SQL Serv
 ### So what can we do?
 
 We could write a check into each job to see if it was the primary every time it runs, setting this at Step 1 so if Step 1 failed the job would exit but this would become messy, I wanted something we could manage centrally.
-
-<!--more-->
 
 ### Break out the Utility Database
 
@@ -60,6 +59,7 @@ Now that we have our table we can populate it with some of the jobs we would lik
 Once you have populated the table with all of the jobs you would like to include in the check, we will need to create the stored procedure that will enable/disable the jobs depending on the member status. I have included an example below.
 
 ![](https://www.codenameowl.com/wp-content/uploads/2018/09/Availability_Groups_And_Server_Agents_10-300x98.jpg")
+
 #### What Is Going On?
 
 Alright, let me try and explain what that stored procedure is doing, I will break it down into manageable chunks
@@ -103,7 +103,7 @@ The first section is going to check to make sure that the DBA_Tasks database exi
 	</code>
 </pre>
 
-At this point it will also check to see if you already have the stored procedure p\_ExcludedJobs in the DBA\_Tasks database, if it does exist already it will be dropped and re-created.
+At this point it will also check to see if you already have the stored procedure p_ExcludedJobs in the DBA_Tasks database, if it does exist already it will be dropped and re-created.
 
 <pre> 
 	<code class="sql">
@@ -189,7 +189,7 @@ We now need to insert all of the jobs we are managing into the temp table, you w
 
 Now we have two variables
 
-@MaxID &#8211; We will set this to the MAX value of the ID column from #Excluded\_Jobs essentially this will give us the number of passes we need to do before ending the script, for example, if #Excluded\_Jobs has 4 rows @MaxID would be set to 4
+@MaxID &#8211; We will set this to the MAX value of the ID column from #Excluded_Jobs essentially this will give us the number of passes we need to do before ending the script, for example, if #Excluded_Jobs has 4 rows @MaxID would be set to 4
 
 @Counter &#8211; Initially we are setting this to 1 it will then increment until it reaches the value of @MaxID then the stored procedure will end, this allows us to loop through all of the jobs we are managing and disable/enable them based on the availability group member status.
 
@@ -258,7 +258,7 @@ This is where the loop begins, we are checking to make sure that @Counter is les
 	</code>
 </pre>
 
-The next section is where the jobs are either enabled or disabled depending on **@Availability_Role** at the very top we are going to get the @Job\_Name we do this by selecting Job\_Name from #Excluded_Jobs where the ID of the row equals the ID of @Counter.
+The next section is where the jobs are either enabled or disabled depending on **@Availability_Role** at the very top we are going to get the @Job_Name we do this by selecting Job_Name from #Excluded_Jobs where the ID of the row equals the ID of @Counter.
 
 Once we have this we check to see what **@Availability_Role** is set to, if it is Primary we are going to Enable the Job, if **@Availability_Role** is not set to Primary we are going to disable the job.
 
@@ -308,8 +308,8 @@ Next, from the new job window, select Steps from the Select a page pane on the r
 
 ![](/assets/img/Availability_Groups_And_Server_Agents_06.jpg)
 
-1. Enter a name for the step, I call called this Run Stored Procedure  
-2. Choose the Database in which the stored procedure lives in, DBA_Tasks should exist if you have followed this post all the way, if not select your utility database.  
+1. Enter a name for the step, I call called this Run Stored Procedure
+2. Choose the Database in which the stored procedure lives in, DBA_Tasks should exist if you have followed this post all the way, if not select your utility database.
 3. Enter the following T-SQL
 
 <pre> 

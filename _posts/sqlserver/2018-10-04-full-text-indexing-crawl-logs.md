@@ -13,15 +13,16 @@ tags:
   - SQL
   - sqlserver
 ---
+
 Recently I ran into an issue I had never experienced before, a third party vendor was using Full-Text Indexing on one of the databases in their application, as part of their nightly routine they would do an incremental rebuild of the full-text index and then once a week a full rebuild of that index would take place, this wasn&#8217;t causing any SQL related problems but I found one day that the C:\ on that instance had become rather full and had triggered the disk alarm on our monitoring application.
 
-Upon investigation, I found that there was a <span style="text-decoration: underline;"><strong>17GB</strong></span> crawl log on disk! Due to the instance not being restarted in some time the index rebuild had been apending the same log over and over.
+Upon investigation, I found that there was a <span style="text-decoration: underline;"><strong>17GB</strong></span> crawl log on disk! Due to the instance not being restarted in some time the index rebuild had been appending the same log over and over.
 
 I needed to find a way to shrink that log or get SQL to make a new one each time the rebuild job runs, therein lies the problem, for some reason Microsoft has little to no documentation on the crawl logs themselves so I set about trying to find articles written by other people who may have been in a similar situation previously, unfortunately, I found very very few, so I started testing&#8230;
 
 ### Anatomy Of The Crawl Log
 
-When an error occurs during a crawl, the Full-Text crawl logging facility creates and _maintains** **_a crawl log, for me this also included informational events.
+When an error occurs during a crawl, the Full-Text crawl logging facility creates and _maintains\*\* \*\*\_a crawl log, for me this also included informational events.
 
 Each crawl log corresponds to a specific Catalog in a specific database.
 
@@ -73,12 +74,12 @@ Once executed, a new log file will be created in your log directory. After a per
 
 ### That&#8217;s all folks
 
-The crawl log now gets recycled once a day before the index rebuild takes place, we worked alongside the third-party vendor to implement sp\_fulltext\_recycle\_crawl\_log into their existing SQL Agent Job, this has made the crawl log much more manageable.
+The crawl log now gets recycled once a day before the index rebuild takes place, we worked alongside the third-party vendor to implement sp_fulltext_recycle_crawl_log into their existing SQL Agent Job, this has made the crawl log much more manageable.
 
 ### Some Notable Resources
 
 Here are some of the resources I used to understand these logs and come up with a workable solution.
 
-  * <https://docs.microsoft.com/en-us/sql/relational-databases/search/populate-full-text-indexes?view=sql-server-2017>
-  * <https://thesqldude.com/tag/crawl-log/>
-  * <https://www.sqlrx.com/march-2016-tip-of-the-month-full-text-indexing-clean-up-those-log-files/>
+- <https://docs.microsoft.com/en-us/sql/relational-databases/search/populate-full-text-indexes?view=sql-server-2017>
+- <https://thesqldude.com/tag/crawl-log/>
+- <https://www.sqlrx.com/march-2016-tip-of-the-month-full-text-indexing-clean-up-those-log-files/>

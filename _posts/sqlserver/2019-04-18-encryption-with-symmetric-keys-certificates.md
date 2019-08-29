@@ -13,6 +13,7 @@ tags:
   - sqlserver
   - t-sql
 ---
+
 Recently I was asked to look into the possibility of encrypting some of the column level data that is held within a SQL Server instance, not knowing where to start and not running SQL Server 2017 I set about looking for options, one of which was to use Symmetric Keys & Certificates to encrypt the data and in this post I am going to demonstrate how I did that and what I learned.
 
 First up I created a table that would potentially hold sensitive information I could use for demonstration purposes.
@@ -117,7 +118,7 @@ This is where the magic happens.
 
 First I need to ask SQL Server to initialize the Symmetric Key, which is decrypted using the certificate I created.
 
-Now I need to update the sensitive columns by encrypting the data and copying that encrypted data into the column marked &#8220;_encrypted&#8221;
+Now I need to update the sensitive columns by encrypting the data and copying that encrypted data into the column marked &#8220;\_encrypted&#8221;
 
 Once completed I need to tell SQL Server to close up the Symmetric Key.
 

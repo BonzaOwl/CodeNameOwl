@@ -11,6 +11,7 @@ tags:
   - sqlserver
   - t-sql
 ---
+
 In SQL Server it is possible to insert data from one table into another using a select within the insert statement, I recently ran into an issue where a stored procedure has been written that didn&#8217;t specify the columns on the insert side of the statement and simply specified
 
 <pre>

@@ -11,6 +11,7 @@ tags:
   - sqlserver
   - t-sql
 ---
+
 Recently I needed to export some data from a table that was being used to hold information from a contact form, it had lots of information inside of it but for some reason the Comments column was causing lots of problems when loaded up into Excel, there would be formatting issues and text appearing on a new line when in SQL it appeared that all of that text should be on one single line.
 
 In this demonstration, I am going to show what caused that, at least for me in my scenario.

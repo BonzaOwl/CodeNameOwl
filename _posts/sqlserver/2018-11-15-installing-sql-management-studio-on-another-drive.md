@@ -14,6 +14,7 @@ tags:
   - ssd
   - windows
 ---
+
 So you have that really fast SSD in your development machine or that machine that is provided by your workplace, windows is installed onto it thus that is where the C: resides, the problem is that SSD is only 120GB in size, windows takes up a large chunk of that and once you install a few tools like Visual Studio, SQL Server Developer and SQL Management Studio that lovely SSD is pretty much full.
 
 I ran into this problem recently, but fortunately the machine that I was working on had a second, larger disk in it, granted it was a spinning disk, but I wanted to install a few of the tools I had previously installed onto the C drive onto that disk, mainly to free up some space.

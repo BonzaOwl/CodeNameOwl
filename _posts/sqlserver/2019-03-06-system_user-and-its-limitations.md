@@ -12,6 +12,7 @@ tags:
   - SQL
   - sqlserver
 ---
+
 Recently I came across a stored procedure I had written a few years ago, when I first started as a developer I was given a task where I needed to write a stored procedure that allowed users to update an underlying table but also track the changes, what data had been amended and who amended it, to make it work I made use of an audit table to capture them details around which users were doing what. To achieve this I had selected to use [SYSTEM_USER](https://docs.microsoft.com/en-us/sql/t-sql/functions/system-user-transact-sql?view=sql-server-2017) not knowing at the time it&#8217;s limitations.
 
 I ran into a scenario a little while ago where the underlying data had been updated but the audit table suggested that a user had updated the data who said they didn&#8217;t, SYSTEM_USER was raised as a potential problem and not knowing it could record another user&#8217;s context I set about investigating how this works.
@@ -36,9 +37,9 @@ So like all things, I built out a test to see how this could have potentially ha
 
 What this will do is return me the following;
 
-  1. The executing user
-  2. The user who is logged into the computer
-  3. The username without the computer name
+1. The executing user
+2. The user who is logged into the computer
+3. The username without the computer name
 
 Okay so let&#8217;s find out what we get back from that stored procedure if I just execute it as me
 
@@ -48,11 +49,11 @@ Okay so let&#8217;s find out what we get back from that stored procedure if I ju
   </code>
 </pre>
 
-I get exactly what I am expecting, my username is in both the SYSTEM\_USER and ORIGINAL\_LOGIN() function returns.
+I get exactly what I am expecting, my username is in both the SYSTEM_USER and ORIGINAL_LOGIN() function returns.
 
 ![](/assets/img/SystemUser_Result1.png)
 
-Now I need another user in that database to test against, someone that isn&#8217;t me. I am going to map this user to the DBA\_Tasks database and give them db\_owner permissions
+Now I need another user in that database to test against, someone that isn&#8217;t me. I am going to map this user to the DBA_Tasks database and give them db_owner permissions
 
 <pre>     
 <code class="sql">
@@ -87,7 +88,7 @@ I am still logged into the computer as me but what results am I going to get bac
 
 ![](/assets/img/SystemUser_Result2.png)
 
-As you can see, SYSTEM\_USER has returned the principal that we ran the stored procedure as, if we are trying to capture WHO ran that stored procedure this obviously wouldn&#8217;t be sufficient, ORIGINAL\_LOGIN() however has given us the username of the principal logged into the machine and where the query was being executed which in this case would have been correct.
+As you can see, SYSTEM_USER has returned the principal that we ran the stored procedure as, if we are trying to capture WHO ran that stored procedure this obviously wouldn&#8217;t be sufficient, ORIGINAL_LOGIN() however has given us the username of the principal logged into the machine and where the query was being executed which in this case would have been correct.
 
 Reading through the [documentation](https://docs.microsoft.com/en-us/sql/t-sql/functions/system-user-transact-sql?view=sql-server-2017) for SYSTEM_USER we see the following;
 
@@ -95,9 +96,9 @@ Reading through the [documentation](https://docs.microsoft.com/en-us/sql/t-sql/f
   <code class="sql">
     SYSTEM_USER
   </code>
-</pre> 
-  
-  returns the name of the currently executing context. If the EXECUTE AS statement has been used to switch context, SYSTEM_USER returns the name of the impersonated context.
+</pre>
+
+returns the name of the currently executing context. If the EXECUTE AS statement has been used to switch context, SYSTEM_USER returns the name of the impersonated context.
 
 Of course we had given the login db_owner to the DBATasks database in the first test, so they could essentially do anything that they pleased within that database, but what if the user has just select permissions against the database?
 
@@ -135,7 +136,7 @@ As you can see from the result returned, we are not allowed to do that
   </code>
 </pre>
 
-Even if we give the user db\_datawriter permissions we still can&#8217;t impersonate another user, the principal needs explicit impersonate permissions, db\_owner or be a sysadmin for this to work.
+Even if we give the user db_datawriter permissions we still can&#8217;t impersonate another user, the principal needs explicit impersonate permissions, db_owner or be a sysadmin for this to work.
 
 Wanna see? Ok let&#8217;s demonstrate that;
 

@@ -13,6 +13,7 @@ tags:
   - sqlserver
   - tempdb
 ---
+
 So, I have a problem, TempDB is blowing up, I don&#8217;t know what is causing it but I need to figure out why it is happening and getting so big in such a short space of time.
 
 ### The Pretext
@@ -25,9 +26,9 @@ I set about doing some googling and stumbled across a great post over on [Brent 
 
 ### The Servers
 
-This instance in which this problem resides is part of a two node availability group and has a TempDB configuration with 4 data files which are all set to grow in 256mb increments* and one log file set to grow in 128mb increments. The starting size of each files is 1GB and the TempDB configuration is the same on both nodes.
+This instance in which this problem resides is part of a two node availability group and has a TempDB configuration with 4 data files which are all set to grow in 256mb increments\* and one log file set to grow in 128mb increments. The starting size of each files is 1GB and the TempDB configuration is the same on both nodes.
 
-* I know that TempDB should be sized for the instance on an individual basis and be configured to fill the disk across the data files, however that isn&#8217;t possible with this instance.
+- I know that TempDB should be sized for the instance on an individual basis and be configured to fill the disk across the data files, however that isn&#8217;t possible with this instance.
 
 ### The Problem
 
@@ -180,10 +181,10 @@ Next up we have the meta data file and where we want that to be stored, pretty m
 
 Now we are happy with our Extended Event and have everything we want captured specified let&#8217;s create it. Once it has been created you can check that it is available by doing the following;
 
-  1. Expand the name of the SQL Server
-  2. Expand the Management folder
-  3. Expand The Extended Events Folder
-  4. Check that the Extended Event you specified exists
+1. Expand the name of the SQL Server
+2. Expand the Management folder
+3. Expand The Extended Events Folder
+4. Check that the Extended Event you specified exists
 
 ![](/assets/img/TempDB_ExtendedEvent_Session.png)
 
@@ -216,7 +217,6 @@ You can also delete the Extended Event using the following T-SQL, this however _
 Now that we have some data in the output file(s) which should look like (below) in the location you specified;
 
 ![The output files as shown on disk](/assets/img/tempdb_event_log.png)
-
 
 We can go ahead and have a look at the results. The Extended Event Log File(s) are essentially just XML so we can shed them in SQL Server Management Studio just like we would XML to get the information from them into a column based results table.
 
@@ -373,18 +373,18 @@ The rest of the T-SQL will get the **top 1500** Forenames from my names table an
 
 Blimey, that is a lot of information to process, what does it all mean though?
 
-  * **Session ID** &#8211; The session ID (SPID) assigned to the user who has executed the query that caused the TempDB file to grow
-  * **Client Host Name** &#8211; The hostname of the machine where the offending query originated.
-  * **SourceDB** &#8211; The source database where the growth came from
-  * **GrowthDB** &#8211; The database that grew
-  * **Growth File** &#8211; The file in the database that grew
-  * **DB File Type** &#8211; The file type, log or data that grew
-  * **Event Type** &#8211; The event that took place, in this case it will be database\_file\_size_change as we are not capturing anything else
-  * **Size Changed KB** &#8211; The size that the database changed by (in KB)
-  * **Total Size KB** &#8211; The new size of the file
-  * **Duration In MS** &#8211; How long the growth event took to complete
-  * **Growth Time** &#8211; The time that the growth event took place
-  * **Query Text** &#8211; The offending query
+- **Session ID** &#8211; The session ID (SPID) assigned to the user who has executed the query that caused the TempDB file to grow
+- **Client Host Name** &#8211; The hostname of the machine where the offending query originated.
+- **SourceDB** &#8211; The source database where the growth came from
+- **GrowthDB** &#8211; The database that grew
+- **Growth File** &#8211; The file in the database that grew
+- **DB File Type** &#8211; The file type, log or data that grew
+- **Event Type** &#8211; The event that took place, in this case it will be database_file_size_change as we are not capturing anything else
+- **Size Changed KB** &#8211; The size that the database changed by (in KB)
+- **Total Size KB** &#8211; The new size of the file
+- **Duration In MS** &#8211; How long the growth event took to complete
+- **Growth Time** &#8211; The time that the growth event took place
+- **Query Text** &#8211; The offending query
 
 One thing that I learnt along away is that in the **SizeChangedKB** column you may see -65592 (negative numbers) this is a shrink event, if you shrink a data file on the database you are monitoring using an extended event shrink events are recorded when the data file changes size, these events are recorded as negative numbers.
 
