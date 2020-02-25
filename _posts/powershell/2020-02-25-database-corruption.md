@@ -5,7 +5,7 @@ author: BonzaOwl
 layout: post
 permalink: /corrupting-databases-on-purpose-with-dbatools
 categories:
-  - Powershell
+  - powershell
 tags:
   - Powershell
   - SQL
@@ -91,7 +91,7 @@ Once the corruption has taken place we can use the following code to find out wh
 
 <pre>
     <code class="powershell">
-		$fn = Import-Module dbatools -PassThru 
+    $fn = Import-Module dbatools -PassThru 
     & $fn {Get-DbaSuspectPage -SqlInstance localhost -Database CorruptionTest}
 	</code>
 </pre>
