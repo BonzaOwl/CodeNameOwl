@@ -5,7 +5,7 @@ author: BonzaOwl
 layout: post
 permalink: /corrupting-databases-on-purpose-with-dbatools
 categories:
-  - sqlserver
+  - Powershell
 tags:
   - Powershell
   - SQL
@@ -121,19 +121,19 @@ If you haven't already, load up SQL Management Studio (SSMS) and connect to the 
 
 Expand the databases folder in the item tree
 
-![Database Corruption 1]/assets/img/corruption-1.png)
+![Database Corruption 1](/assets/img/corruption-1.png)
 
 Right click on the CorruptionTest database, from the menu that appears, select Tasks and choose Restore, from the fly out menu select page
 
-![Database Corruption 2]/assets/img/corruption-2.png)
+![Database Corruption 2](/assets/img/corruption-2.png)
 
 From the window that appears make sure that the File ID is set to 1 and the Page ID is set to 224, the backup file also needs to point to the backup file that we took earlier, which in this case was C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Backup\CorruptionTestCorruptDemo.bak
 
-![Database Corruption 3]/assets/img/corruption-3.png)
+![Database Corruption 3](/assets/img/corruption-3.png)
 
 Once you are happy, you can press OK and the page will be restored.
 
-![Database Corruption 4]/assets/img/corruption-4.png)
+![Database Corruption 4](/assets/img/corruption-4.png)
 
 Re-running the SELECT that we did earlier should now return all the data that we are expecting. 
 
