@@ -1,6 +1,6 @@
 ---
 title: SQL Server 2014 Service Pack Error
-date: 2020-02-29T08:00:00+00:00
+date: 2020-02-28T08:00:00+00:00
 author: BonzaOwl
 layout: post
 permalink: /SQL-Server-2014-Service-Pack-Error
@@ -11,11 +11,11 @@ tags:
   - SQL
 ---
 
-I had an issue on one node in the SQL cluster S-SQL06 specifically where KB4470220 & KB4532095 wouldn’t install, they kept throwing an error with code 0x80070643 which when googled didn’t relate to the actual problem, I did some digging and found out what was causing the problem and thought I would share my findings in case anyone runs into this same problem in the future.
+I had an issue on one node in the new SQL 2014 cluster that had just been built S-SQL06 specifically where [KB4470220](https://support.microsoft.com/en-us/help/4470220/cumulative-update-1-for-sql-server-2014-sp3) & [KB4532095](https://support.microsoft.com/en-us/help/4532095/description-of-the-security-update-for-sql-server-2014-sp3-gdr-feb) wouldn’t install, they kept throwing an error with code 0x80070643 which when googled didn’t relate to the actual problem, I did some digging and found out what was causing the problem and thought I would share my findings in case anyone runs into this same problem in the future.
 
 ![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-1.jpg)
 
-As I couldn’t get the updates to install from within windows I manually downloaded both of these KB items however for some reason the Windows Update Catalog wouldn’t work so I broke out powershell and pulled them using the following cmdlet, you will need [kbupdate](https://github.com/potatoqualitee/kbupdate) for this to work
+As I couldn’t get the updates to install from within windows I manually downloaded both of these KB items however for some reason the Windows Update Catalog wouldn’t work so I broke out powershell and pulled them using the following cmdlet, you will need [kbupdate](https://github.com/potatoqualitee/kbupdate) installed for this to work
 
 <pre>
     <code class="powershell">
@@ -23,9 +23,9 @@ Save-KbUpdate -Architecture x64 -Path C:\temp -Name KB4470220, 4532095
     </code>
 </pre>
 
-Once I had them saved I tried installing each update individually on the server and straight away it threw the following error screen
+Once I had them downloaded I tried installing each update individually on the server and almost immediately was presented with the following error
 
-“The user data directory in the registry is not valid”
+*“The user data directory in the registry is not valid”*
 
 ![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-2.png)
 
