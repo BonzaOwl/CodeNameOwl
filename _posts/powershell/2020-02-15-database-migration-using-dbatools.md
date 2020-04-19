@@ -1,5 +1,5 @@
 ---
-title: Database Migration Using dbatools
+title: Database Migration Using DbaTools
 date: 2020-02-15T10:30:45+01:00
 author: BonzaOwl
 layout: post
