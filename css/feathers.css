@@ -27,7 +27,7 @@ body
 
 ::selection /* The color set when text is highlighted */
 {
-    background:rgba(255,165,0,.8);
+    background:#becad3;
     color:#111
 }
 
@@ -73,7 +73,7 @@ html
 }
 
 a:hover.link {
-    color: #ffa500;
+    color: #becad3;
 }
 
 .site-title /*The main site title on index */
@@ -83,13 +83,13 @@ a:hover.link {
 
 a
 {
-    color:#ffa500;
+    color:#becad3;
     text-decoration:none
 }
 
 a:active,a:focus,a:hover
 {
-    color:#ffa500;
+    color:#becad3;
     text-decoration:underline;
     outline:0
 }
@@ -251,7 +251,7 @@ label
 
 .post:hover
 {
-    background:#ffa500;
+    background:#becad3;
     text-decoration:none!important;
     -o-transition:.5s;
     -ms-transition:.5s;
@@ -387,7 +387,7 @@ time
     
 .skills-container .skills:active,.skills-container .skills:hover
 {
-    background:#ffa500;
+    background:#becad3;
     text-decoration: none;
     -o-transition:.5s;
     -ms-transition:.5s;
@@ -446,7 +446,7 @@ time
     
 .all-posts-container .all-posts:active,.all-posts-container .all-posts:hover
 {
-    background:#ffa500;
+    background:#becad3;
     text-decoration: none;
     -o-transition:.5s;
     -ms-transition:.5s;
@@ -563,7 +563,7 @@ time
     
 .cat-container .cat:active,.cat-container .cat:hover
 {
-    background:#ffa500;
+    background:#becad3;
     text-decoration: none;
 }
     
@@ -677,7 +677,7 @@ input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-sea
     
 .search-form [type=search]:active,.search-form [type=search]:focus
 {
-    box-shadow:none;border:0;color:#111;background:#ffa500
+    box-shadow:none;border:0;color:#111;background:#becad3
 }
 
 /*
@@ -735,7 +735,7 @@ blockquote code{margin:1rem 0 0}
 {
     blockquote
     {
-        border-left:16px solid #ffa500;
+        border-left:16px solid #becad3;
         font-size:1.3rem;
         line-height:1.5;
         padding:2rem
@@ -1020,7 +1020,7 @@ div {
   display: inline-block;
   zoom: 1;
   *display: inline;
-  color: #FF9000;
+  color:#becad3;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -1057,7 +1057,7 @@ div {
   font-size: 20px;
 }
 #fh5co-about .fh5co-social-icons li a:hover {
-  background: #FF9000;
+  background:#becad3;
 }
 
 .fh5co-heading {
@@ -1187,7 +1187,7 @@ div {
   top: 40px;
   left: 50%;
   margin-left: -21px;
-  background-color: #FF9000;
+  background-color:#becad3;
   z-index: 100;
   display: table;
   -webkit-border-radius: 50%;
