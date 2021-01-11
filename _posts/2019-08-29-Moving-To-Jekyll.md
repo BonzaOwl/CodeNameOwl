@@ -5,7 +5,7 @@ author: BonzaOwl
 permalink: /moving-to-jekyll
 layout: post
 categories:
-  - Personal
+  - personal
 ---
 
 Last weekend I made a decision, after what feels like a lifetime having sites running on WordPress I am leaving the application behind! But why? 

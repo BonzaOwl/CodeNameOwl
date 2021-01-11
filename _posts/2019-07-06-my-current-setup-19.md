@@ -5,7 +5,7 @@ author: BonzaOwl
 layout: post
 permalink: /my-current-setup-19
 categories:
-  - Personal
+  - "personal"
 tags:
   - personal
   - setup

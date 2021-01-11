@@ -6,7 +6,7 @@ layout: post
 permalink: /building-a-formula-one-race-tracker-part-one
 categories:
   - 'csharp'
-  - Microsoft SQL Server
+  - sqlserver
 tags:
   - application
   - 'C#'

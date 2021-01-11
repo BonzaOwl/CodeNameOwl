@@ -5,7 +5,7 @@ author: BonzaOwl
 layout: post
 permalink: /rebuilding-my-workstation
 categories:
-  - Personal
+  - "personal"
 tags:
   - personal
   - setup

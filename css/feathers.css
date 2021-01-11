@@ -6,8 +6,7 @@
  */
 
 body 
-{
-    padding-top: 5rem;
+{    
     color:#404040;
     font-size:1rem;
 }
@@ -19,7 +18,7 @@ body
 
 .container
 {
-    max-width:850px;
+    max-width:825px;
     padding:0 15px;
     margin-left:auto;
     margin-right:auto
@@ -55,7 +54,6 @@ html
     left: 0;
     z-index: 3;
     width:100%;
-    background: #000000;
 
 }
 
@@ -72,6 +70,19 @@ html
     align-items: center;
 }
 
+.brand {
+  color: #000; 
+  font-size:1.5em; 
+  text-decoration: none;
+}
+
+.nav-items {
+  color: #000; 
+  font-size:1.2em; 
+  padding:0px 0px 0px 5px; 
+  text-decoration: none;
+}
+
 a:hover.link {
     color: #becad3;
 }
@@ -83,7 +94,8 @@ a:hover.link {
 
 a
 {
-    color:#becad3;
+    color:#efc7c3;
+    font-weight: bold;
     text-decoration:none
 }
 
@@ -203,19 +215,40 @@ label
     }
 }
 
+/*
+* ABOUT BLOCK 
+*/
+
+.about-me {
+  margin-top: 20px; 
+  background-color: #f2f2f2; 
+  border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius:5px 5px 5px 5px;
+  padding-top: .75rem; 
+  padding-bottom: .75rem
+}
+
 /* 
 * POST STYLES
 */
 
-.home-post
-{
-    background: #ffd17e;   
-    padding:.75rem;
-    margin-top: .75rem;
-    margin-bottom: .75rem;
-    margin-left: .75rem;
-    margin-right: .75rem;
-    border-radius:4px;
+.latest-posts {
+  margin-top: 40px;
+  background-color: #f6eeea; 
+  border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius:5px 5px 5px 5px;
+  padding-top: .75rem; 
+  padding-bottom: .75rem
+}
+
+.home-post {
+  background: #becad3;
+  padding:.75rem;
+  margin-top: .75rem;
+  margin-bottom: .75rem;
+  margin-left: .75rem;
+  margin-right: .75rem;
+  border-radius:4px;
 }
 
 .home-post-photo
@@ -436,7 +469,7 @@ time
 .all-posts-container .all-posts
 {
     padding:.4rem .8rem;
-    background: #ffd17e;
+    background: #fbdecc;
     color:#111;
     border-radius:4px;
     font-size:.8rem;

@@ -6,7 +6,7 @@ layout: post
 permalink: /how-i-got-here-where-i-am-going
 image: /wp-content/uploads/2018/08/How-I-Got-Here-Where-I-am-Going-1200x280.png
 categories:
-  - Personal
+  - "personal"
 tags:
   - mylife
   - story

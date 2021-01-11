@@ -5,7 +5,7 @@ author: BonzaOwl
 layout: post
 permalink: /building-a-formula-one-race-tracker-part-two
 categories:
-  - Microsoft SQL Server
+  - sqlserver
   - csharp
 tags:
   - application

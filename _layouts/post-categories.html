@@ -1,0 +1,27 @@
+{% for category in site.categories %}
+  {% assign category_name = category | first %}
+  <section class="section  typeset">
+    <h2 id="{{ category_name | slugify }}">{{ category_name }}</h2>
+   <div class="latest-posts">
+      {% for page in site.categories[category_name] %}
+        {% assign has_categories = true %}
+        <div class="home-post">
+       
+          
+            <h3><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h3>
+            {% include post-meta.html %}
+            {{ page.excerpt | truncatewords: 10 | markdownify }}
+          
+        
+        </div>
+      {% endfor %}
+    </div>
+    {% unless forloop.last %}<hr/>{% endunless %}
+  </section>
+{% endfor %}
+
+{% if has_categories != true %}
+  <section class="section  typeset">
+    <p>There are no categorised posts</p>
+  </section>
+{% endif %}

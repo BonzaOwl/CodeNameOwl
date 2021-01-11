@@ -6,7 +6,7 @@ layout: post
 permalink: /installing-sql-management-studio-on-another-drive
 image: /wp-content/uploads/2018/11/Installing-SQL-Management-Studio-On-Another-Drive-1200x280.png
 categories:
-  - Powershell
+  - powershell
 tags:
   - application
   - powershell

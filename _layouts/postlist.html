@@ -19,7 +19,7 @@
 
       {% for post in site.posts %}
       <div class="home-post"
-        style="background: #ffd17e;padding:.75rem;margin-top: .75rem;margin-bottom: .75rem;margin-left: .75rem;margin-right: .75rem;border-radius:4px;">
+        style="background: #becad3;padding:.75rem;margin-top: .75rem;margin-bottom: .75rem;margin-left: .75rem;margin-right: .75rem;border-radius:4px;">
 
 
         <span class="home-post-date" style="display:inline">
@@ -29,7 +29,7 @@
         <span class="single-category mobile-hide" style="display:inline">
 
           {% for category in post.categories %}
-          <span class="category-high"> {{category}} </span>
+          <span class="category-high"> <a href="/categories/#{{ category | downcase }}">{{category }}</a>  </span>
           {%endfor%}
         </span>
 
