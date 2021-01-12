@@ -226,7 +226,7 @@ I did have to do some work to get the data into a workable state though, which I
 
 Which looked like this when complete;
 
-![](/assets/img/Formula-1-Drivers-Google_Sheets.png)
+![](/assets/img/Formula-1-Drivers-Google_Sheets.png){: .img-fluid}
 
 I have included the source to all of the referential data under each insert statement.
 
@@ -435,7 +435,7 @@ Now that the table schema is created and we have populated the referential data 
 
 You should get some like this in the output
 
-![](/assets/img/Formula-1-Drivers-Driver-Team-Query.png)
+![](/assets/img/Formula-1-Drivers-Driver-Team-Query.png){: .img-fluid}
 
 In future seasons if a driver moves between teams each driver will have multiple rows returned but as explained above the current team will be the one where the End_Date is NULL.
 

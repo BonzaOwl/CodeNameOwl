@@ -186,7 +186,7 @@ Now we are happy with our Extended Event and have everything we want captured sp
 3. Expand The Extended Events Folder
 4. Check that the Extended Event you specified exists
 
-![](/assets/img/TempDB_ExtendedEvent_Session.png)
+![](/assets/img/TempDB_ExtendedEvent_Session.png){: .img-fluid}
 
 If your Extended Event exists you can go ahead and Start it, this will start capturing information right away.
 
@@ -216,11 +216,11 @@ You can also delete the Extended Event using the following T-SQL, this however _
 
 Now that we have some data in the output file(s) which should look like (below) in the location you specified;
 
-![The output files as shown on disk](/assets/img/tempdb_event_log.png)
+![The output files as shown on disk](/assets/img/tempdb_event_log.png){: .img-fluid}
 
 We can go ahead and have a look at the results. The Extended Event Log File(s) are essentially just XML so we can shed them in SQL Server Management Studio just like we would XML to get the information from them into a column based results table.
 
-![Taken from my pre-analysis testing.](/assets/img/TempDB_ExtendedEvent_Shred_ExampleOut.png)
+![Taken from my pre-analysis testing.](/assets/img/TempDB_ExtendedEvent_Shred_ExampleOut.png){: .img-fluid}
 
 This shred is also the same as the code in the [Brent Ozar post](https://www.brentozar.com/archive/2015/12/tracking-tempdb-growth-using-extended-events/), as I used the Extended Event provided in that post it made sense to use the code to shred that data too, I did make some changes to datatypes but other than that it is the same code.
 
@@ -363,11 +363,11 @@ Having this raiserror in the loop will show how many times the loop has been rou
 
 See&#8230;it just prints out how many times the loop has been around
 
-![](/assets/img/TempDB_ExtendedEvent_Dizzy_Monitor.png)
+![](/assets/img/TempDB_ExtendedEvent_Dizzy_Monitor.png){: .img-fluid}
 
 The rest of the T-SQL will get the **top 1500** Forenames from my names table and insert them into our defined Temp table, once it is has done the select it will update them rows with a Surname from the same names table, this will happen 100 times giving us something like this in our Extended Event log file when we shred the data.
 
-![](/assets/img/TempDB_ExtendedEvent_Shred_DemoOut.png)
+![](/assets/img/TempDB_ExtendedEvent_Shred_DemoOut.png){: .img-fluid}
 
 #### What Does All That Mean?
 
@@ -390,11 +390,11 @@ One thing that I learnt along away is that in the **SizeChangedKB** column you m
 
 As you can see the query we used for testing caused every single file in TempDB to grow, the size in which that database grew is recorded and the new size of that file is shown.
 
-![](/assets/img/TempDB_ExtendedEvent_Shred_Grow.png)
+![](/assets/img/TempDB_ExtendedEvent_Shred_Grow.png){: .img-fluid}
 
 The offending SQL query is also shown, so you are able to easily track down what query caused the growth to happen.
 
-![](/assets/img/TempDB_ExtendedEvent_Shred_Offending_Query.png)
+![](/assets/img/TempDB_ExtendedEvent_Shred_Offending_Query.png){: .img-fluid}
 
 You are then able to track down on your SQL Server what T-SQL query is causing your TempDB to grow, although we know that TempDB should really be configured to fill the disk in which it resides but as we mentioned earlier this isn&#8217;t possible in every configuration so it is important to understand that not all growth events are bad but this will allow you to see what is causing the growth of the database so that you can monitor and take action if required.
 

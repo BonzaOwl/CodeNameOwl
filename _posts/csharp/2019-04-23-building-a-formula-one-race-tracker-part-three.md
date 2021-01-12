@@ -277,7 +277,7 @@ This is just a simple select with returning all values in the Race_Types table.
     </code>
 </pre>
 
-![](/assets/img/Race_Types_Table_Output.png)
+![](/assets/img/Race_Types_Table_Output.png){: .img-fluid}
 
 #### Get Circuits
 
@@ -321,7 +321,7 @@ In the select, I have returned both the name of the Circuit and the Circuit ID a
     </code>
 </pre>
 
-![](/assets/img/Circuit_Table_Output.png)
+![](/assets/img/Circuit_Table_Output.png){: .img-fluid}
 
 #### Get Drivers
 
@@ -362,7 +362,7 @@ Get_Drivers is slightly different, it only returns drivers that have not retired
     </code>
 </pre>
 
-![](/assets/img/Driver_Table_Output.png)
+![](/assets/img/Driver_Table_Output.png){: .img-fluid}
 
 #### Get Results
 
@@ -484,4 +484,4 @@ Finally, the data is then grouped, first by driver forename, then driver surname
 
 This should return something like this;
 
-![](/assets/img/Race_Results_Output.png)
+![](/assets/img/Race_Results_Output.png){: .img-fluid}

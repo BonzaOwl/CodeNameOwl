@@ -54,15 +54,15 @@ Select the data from that table
 
 The results show that the data looks normal right?
 
-![](/assets/img/newline-data1.png)
+![](/assets/img/newline-data1.png){: .img-fluid}
 
 But what if I was to export the dataset to a CSV file, would the results be the same? Let&#8217;s find out. Export the data to a CSV file and open it up in [Notepad++](https://notepad-plus-plus.org/) if you don&#8217;t have Notepad++, download it. Once you have Notepad++ installed go to the view menu, select show symbol and tick show all characters.
 
-![](/assets/img/newline-data4.png)
+![](/assets/img/newline-data4.png){: .img-fluid}
 
 With the file now open in Notepad++ and all the hidden characters showing you can see it doesn&#8217;t look right, some of the data is appearing on a new line. If I were to load this in excel it wouldn&#8217;t be correct.
 
-![](/assets/img/newline-data2.png)
+![](/assets/img/newline-data2.png){: .img-fluid}
 
 The reason for that is that excel reads CHAR(10) and CHAR(13) as line breaks and acts on them accordingly printing the text onto new lines.
 
@@ -79,4 +79,4 @@ Re-run the above select, choosing to export the data to CSV.
 
 Now open the CSV file, again in Notepad++ this time you can see the line breaks are gone and the CSV is displaying as expected.
 
-![](/assets/img/newline-data3.png)
+![](/assets/img/newline-data3.png){: .img-fluid}

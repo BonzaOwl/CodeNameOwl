@@ -51,7 +51,7 @@ I will assume you know how to create a form in Visual Studio mine looked like so
 
 Which should look something like this on the page
 
-![](/assets/img/DynamicGridView-1.png)
+![](/assets/img/DynamicGridView-1.png){: .img-fluid}
 
 **_I am using Bootstrap for the framework_**
 
@@ -141,7 +141,7 @@ I now need a method to handle the events that will take place when I click the b
 </code>
 </pre>
 
-![](/assets/img/GridViewNewRows.gif)
+![](/assets/img/GridViewNewRows.gif){: .img-fluid}
 
 ### On Row Deleting
 
@@ -161,7 +161,7 @@ This is the method that will handle the removal of the row from the GridView ess
 </code>
 </pre>
 
-![](/assets/img/GridViewDeleteRows.gif)
+![](/assets/img/GridViewDeleteRows.gif){: .img-fluid}
 
 ### The Page Load
 

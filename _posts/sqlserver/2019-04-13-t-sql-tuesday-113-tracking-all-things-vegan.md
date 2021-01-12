@@ -13,7 +13,7 @@ tags:
   - T-SQL Tuesday
 ---
 
-![](/assets/img/T-SQL-Tuesday-Logo.jpg)
+![](/assets/img/T-SQL-Tuesday-Logo.jpg){: .img-fluid}
 
 This month&#8217;s T-SQL Tuesday comes from Todd Kleinhans ([Blog](https://toddkleinhans.wordpress.com/) & [Twitter](http://www.twitter.com/toddkleinhans)) he asked, &#8220;what do YOU use databases for in your personal life?&#8221;
 
@@ -31,7 +31,7 @@ That is where the SQL Database came from.
 
 When I started as a SQL Server developer I wanted something that would give me a project, something outside of my day to day work life that I could use to collect my own data in, manipulate it and not break any of the work rules, so I designed **_Is That Vegan_** taking what I had already collected and importing that into a SQL Database, then going back and completing the gaps.
 
-![](/assets/img/isitvegan.png)
+![](/assets/img/isitvegan.png){: .img-fluid}
 
 ### It may not be perfect
 

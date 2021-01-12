@@ -58,7 +58,7 @@ Now that we have our table we can populate it with some of the jobs we would lik
 
 Once you have populated the table with all of the jobs you would like to include in the check, we will need to create the stored procedure that will enable/disable the jobs depending on the member status. I have included an example below.
 
-![](https://www.codenameowl.com/wp-content/uploads/2018/09/Availability_Groups_And_Server_Agents_10-300x98.jpg")
+![](https://www.codenameowl.com/wp-content/uploads/2018/09/Availability_Groups_And_Server_Agents_10-300x98.jpg"){: .img-fluid}
 
 #### What Is Going On?
 
@@ -286,27 +286,27 @@ Your going to need to create a SQL Server Agent Job that will call the stored pr
 
 Let&#8217;s show you how to do that then yeah?
 
-![](/assets/img/Availability_Groups_And_Server_Agents_00.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_00.jpg){: .img-fluid}
 
 First, On the object explorer in SQL Management Studio expand the SQL Server Agent by clicking the +
 
-![](/assets/img/Availability_Groups_And_Server_Agents_01.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_01.jpg){: .img-fluid}
 
 Next, you will see a bunch of folders appear, one of which is called Jobs, right-click that
 
-![](/assets/img/Availability_Groups_And_Server_Agents_02.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_02.jpg){: .img-fluid}
 
 A context menu will appear, from this menu select New Job.
 
-![](/assets/img/Availability_Groups_And_Server_Agents_03.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_03.jpg){: .img-fluid}
 
 This will launch a new window where we can setup our job, enter a name in the name field, I have gone ahead and called mine Availability Member Check, you can call it whatever you want, I have also changed the Owner to sa (I have renamed my sa account)
 
-![](/assets/img/Availability_Groups_And_Server_Agents_04.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_04.jpg){: .img-fluid}
 
 Next, from the new job window, select Steps from the Select a page pane on the right-hand side of the window. Once you have clicked Steps from the bottom select New.
 
-![](/assets/img/Availability_Groups_And_Server_Agents_06.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_06.jpg){: .img-fluid}
 
 1. Enter a name for the step, I call called this Run Stored Procedure
 2. Choose the Database in which the stored procedure lives in, DBA_Tasks should exist if you have followed this post all the way, if not select your utility database.
@@ -320,7 +320,7 @@ Next, from the new job window, select Steps from the Select a page pane on the r
 
 4. Once you have completed that, Click OK
 
-![](/assets/img/Availability_Groups_And_Server_Agents_07.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_07.jpg){: .img-fluid}
 
 From the side panel, of the New Job window, select Schedules, then click New
 
@@ -334,7 +334,7 @@ From the side panel, of the New Job window, select Schedules, then click New
 
 4. Once you are happy Click Ok
 
-![](/assets/img/Availability_Groups_And_Server_Agents_09.jpg)
+![](/assets/img/Availability_Groups_And_Server_Agents_09.jpg){: .img-fluid}
 
 Finally, select the Notifications page from the side bar on the New Job window.
 

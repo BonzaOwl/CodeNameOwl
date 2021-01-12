@@ -24,7 +24,7 @@ I needed to find out what version of PowerShell I am using so the correct method
 
 This returns the currently installed version of PowerShell
 
-![](/assets/img/PSVersion.png)
+![](/assets/img/PSVersion.png){: .img-fluid}
 
 As you can see my system has version 5 installed, so I can use one of two installation methods.
 
@@ -48,7 +48,7 @@ The web request method is a little bit slower but if PowerShell 5 isn&#8217;t av
 
 When installing the module, I was presented with the following, as the NuGet Provider is required, selecting yes is the only option to allow the installation to proceed
 
-![](/assets/img/PSNuGet.png)
+![](/assets/img/PSNuGet.png){: .img-fluid}
 
 &nbsp;
 
@@ -62,7 +62,7 @@ Now that I have the module installed there are so many functions that can be use
   </code>
 </pre>
 
-![](/assets/img/DBACommand.png)
+![](/assets/img/DBACommand.png){: .img-fluid}
 
 As you can see, that returns a list of all the available commands that are usable within DBATools. But what if I want to find something more specific, let&#8217;s say I need to perform a backup but don&#8217;t know the command? Well, that is built into DBATools too, simply run this command.
 
@@ -72,7 +72,7 @@ As you can see, that returns a list of all the available commands that are usabl
   </code>
 </pre>
 
-![](/assets/img/DBACommand-BackupTag.png)
+![](/assets/img/DBACommand-BackupTag.png){: .img-fluid}
 
 As you can see that will return all the available backup related commands that can be performed in DBATools.
 
@@ -88,11 +88,11 @@ Now that I know what commands I have available, let&#8217;s have a look at how t
 
 When we run this command, DBATools will back up our StackOverflow database to the directory we have specified with the filename we have specified.
 
-![](/assets/img/BackupDatabase.png)
+![](/assets/img/BackupDatabase.png){: .img-fluid}
 
 &nbsp;
 
-![](/assets/img/BackupDatabase-Done.png)
+![](/assets/img/BackupDatabase-Done.png){: .img-fluid}
 
 So that is cool, but that is going to break my log chain! DBATools can handle that too just specify the CopyOnly parameter.
 
@@ -112,7 +112,7 @@ So now we know how to backup databases from DBATools how can we find out when th
   </code>
 </pre>
 
-![](/assets/img/LastBackupAll.png)
+![](/assets/img/LastBackupAll.png){: .img-fluid}
 
 This is going to show us the last backup information for ALL databases on the instance, but what we want to just find out about one database, well just like the backup command, specify the database.
 
@@ -122,7 +122,7 @@ This is going to show us the last backup information for ALL databases on the in
   </code>
 </pre>
 
-![](/assets/img/LastBackupSO.png)
+![](/assets/img/LastBackupSO.png){: .img-fluid}
 
 ### Check it once, check it twice
 
@@ -134,11 +134,11 @@ So now I know how to backup my databases, I can find out when the last backup wa
   </code>
 </pre>
 
-![](/assets/img/LastBackupCheck.png)
+![](/assets/img/LastBackupCheck.png){: .img-fluid}
 
 If I have a look in SSMS during the restore I will be able to see that the restore is actually taking place
 
-![](/assets/img/LastBackupCheck-SSMS.png)
+![](/assets/img/LastBackupCheck-SSMS.png){: .img-fluid}
 
 &nbsp;
 

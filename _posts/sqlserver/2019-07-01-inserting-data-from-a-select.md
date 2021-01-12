@@ -108,7 +108,7 @@ As expected, SQL Server has thrown an error;
     </code>
 </pre>
 
-![Inserting From Select](/assets/img/Insert-from-select.png)
+![Inserting From Select](/assets/img/Insert-from-select.png){: .img-fluid}
 
 To fix this, the columns need to be specified on both the Insert & Select which will tell SQL Server &#8220;Hey, I have these columns where I would like to get data from, and here are the columns I would like to put that data&#8221;
 
@@ -140,7 +140,7 @@ This is demonstrated in the below;
 
 Just as we would expect, the data was successfully inserted.
 
-![Inserting From Select](/assets/img/Insert-from-select2.png)
+![Inserting From Select](/assets/img/Insert-from-select2.png){: .img-fluid}
 
 #### Drop them tables
 

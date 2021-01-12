@@ -51,7 +51,7 @@ Okay so let&#8217;s find out what we get back from that stored procedure if I ju
 
 I get exactly what I am expecting, my username is in both the SYSTEM_USER and ORIGINAL_LOGIN() function returns.
 
-![](/assets/img/SystemUser_Result1.png)
+![](/assets/img/SystemUser_Result1.png){: .img-fluid}
 
 Now I need another user in that database to test against, someone that isn&#8217;t me. I am going to map this user to the DBA_Tasks database and give them db_owner permissions
 
@@ -86,7 +86,7 @@ Now that we have another user, let&#8217;s try executing that stored procedure a
 
 I am still logged into the computer as me but what results am I going to get back from my test stored procedure?
 
-![](/assets/img/SystemUser_Result2.png)
+![](/assets/img/SystemUser_Result2.png){: .img-fluid}
 
 As you can see, SYSTEM_USER has returned the principal that we ran the stored procedure as, if we are trying to capture WHO ran that stored procedure this obviously wouldn&#8217;t be sufficient, ORIGINAL_LOGIN() however has given us the username of the principal logged into the machine and where the query was being executed which in this case would have been correct.
 
@@ -171,7 +171,7 @@ Our user still only has datawriter, datareader and execute permissions to the DB
 
 There we have it, we are now executing that stored procedure as someone else.
 
-![](/assets/img/SystemUser_Result2.png)
+![](/assets/img/SystemUser_Result2.png){: .img-fluid}
 
 We can check if a login has IMPERSONATE permissions by running the following TSQL query against the instance, 1 or 0 will be returned depending on the permission set.
 

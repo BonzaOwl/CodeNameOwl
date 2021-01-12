@@ -91,7 +91,7 @@ Once I had created the master key and certificate I could go ahead and build up 
 
 Once I had the master key, certificate, and Symmetric Key in place I could go ahead and insert some dummy data into our patient&#8217;s table.
 
-![Initial Encryption Insert](/assets/img/Encryption-Initial-Insert.png)
+![Initial Encryption Insert](/assets/img/Encryption-Initial-Insert.png){: .img-fluid}
 
 ### Convert
 
@@ -124,7 +124,7 @@ Once completed I need to tell SQL Server to close up the Symmetric Key.
 
 As you can see, the data has been encrypted
 
-![](/assets/img/Encryption-Initial-Insert-Encrypted.png)
+![](/assets/img/Encryption-Initial-Insert-Encrypted.png){: .img-fluid}
 
 ### Drop & Roll
 
@@ -148,7 +148,7 @@ As you can see, the data has been encrypted
 
 Now that the sensitive data has been encrypted, I can drop the plain text columns
 
-![](/assets/img/Encrption-Dropped-Columns.png)
+![](/assets/img/Encrption-Dropped-Columns.png){: .img-fluid}
 
 ### Let&#8217;s Have A Read
 
@@ -173,7 +173,7 @@ The above example shows how to read the data from the encrypted columns.
 
 As you can see, the data is returned as expected.
 
-![](/assets/img/Encryption-Read-Back.png)
+![](/assets/img/Encryption-Read-Back.png){: .img-fluid}
 
 ### Insert Some More
 
@@ -191,7 +191,7 @@ As you can see, the data is returned as expected.
 
 The above example shows how to go about adding more data into the encrypted columns.
 
-![](/assets/img/Encryption-Add-More-Data.png)
+![](/assets/img/Encryption-Add-More-Data.png){: .img-fluid}
 
 <pre>     
 	<code class="sql">
@@ -212,7 +212,7 @@ The above example shows how to go about adding more data into the encrypted colu
 
 Finally, using the above you can see that PatientNumber UR102345679 was added successfully, encrypted and read back by SQL Server.
 
-![](/assets/img/Encryption-More-Data-Read-Back.png)
+![](/assets/img/Encryption-More-Data-Read-Back.png){: .img-fluid}
 
 Performance wise this would be extremely horrible, it isn&#8217;t recommended to encrypt a primary key column, in production, there would be another column that would be the primary key and live within the index however this is for demonstration purposes only.
 

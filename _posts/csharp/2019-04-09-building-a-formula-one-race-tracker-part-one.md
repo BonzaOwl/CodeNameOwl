@@ -150,7 +150,7 @@ _**Note:**_ This project is available in full over on [Git Hub](https://github.c
 
 The first sketch that I did was a mapping of the tables, It didn&#8217;t include any of the data types, what I decided to do was to map out the columns on paper, transfer that into Google Sheets and map the data types to the columns there.
 
-![](/assets/img/F1-Database-Design-e1554396726682.jpg)
+![](/assets/img/F1-Database-Design-e1554396726682.jpg){: .img-fluid}
 
 Once the initial drawing of the table structure was done I completed the mapping of the table data types below are all of the final data types and mappings that I came up with in Google Sheets, it outlines everything that I will need for Part Two, which is where the actual schema will be written.
 
@@ -1395,6 +1395,6 @@ I sketched out a very rough drawing of what I wanted the web application to look
 
 <span style="font-weight: 400;">This is what the pages will look like;</span>
 
-![](/assets/img/Formula-One-Race-Tracker-Submission-Initial.png)
+![](/assets/img/Formula-One-Race-Tracker-Submission-Initial.png){: .img-fluid}
 
-![](/assets/img/Formula-One-Race-Tracker-Results-Initial.png)
+![](/assets/img/Formula-One-Race-Tracker-Results-Initial.png){: .img-fluid}

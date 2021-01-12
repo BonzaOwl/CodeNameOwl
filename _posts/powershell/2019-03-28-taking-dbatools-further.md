@@ -25,7 +25,7 @@ Some times for whatever reason I need to be able to script a table out, this inv
 	</code>
 </pre>
 
-![](/assets/img/table-script-out.png)
+![](/assets/img/table-script-out.png){: .img-fluid}
 
 So the script has executed, but what exactly has it done? If I navigate to C:\temp\tables and open up so-users.sql I will find the following;
 
@@ -80,13 +80,13 @@ In some situations, I may need to get all of the reference data from one table a
 	</code>
 </pre>
 
-![](/assets/img/copy-table-data.png)
+![](/assets/img/copy-table-data.png){: .img-fluid}
 
 The script finished, and in C:\temp\tables there is a file called so-users-data.sql just like what I asked for, I can now take this script to another server run it and import all of the data into another table with the same schema._ _
 
 I could even go one further and just copy the data directly from PowerShell, at the moment my destination table is empty, it resides on the same server as the source table inside the same database.
 
-![](/assets/img/copy-table-data-2.png)
+![](/assets/img/copy-table-data-2.png){: .img-fluid}
 
 If I execute the following line of code
 
@@ -98,11 +98,11 @@ If I execute the following line of code
 
 dbatools is going to go and get all of that data, and copy it into the new table, just like I asked
 
-![](/assets/img/copy-table-data-3.png)
+![](/assets/img/copy-table-data-3.png){: .img-fluid}
 
 But is the data actually there?
 
-![](/assets/img/copy-table-data-4.png)
+![](/assets/img/copy-table-data-4.png){: .img-fluid}
 
 Of course, it is!
 
@@ -124,11 +124,11 @@ Agent Operators are useful for notifications when jobs fail or when an alert is 
 
 If I want to copy the operator to more than one server all I need to do is comma separate the servers passed to the -destination flag.
 
-![](/assets/img/copy-operator.png)
+![](/assets/img/copy-operator.png){: .img-fluid}
 
 If the operator already exists on the destination but I would like to replace it with the one from source all I need to do is pass the -force flag which will drop the operator from the destination before copying it, which is demonstrated below.
 
-![](/assets/img/copy-operator-drop.png)
+![](/assets/img/copy-operator-drop.png){: .img-fluid}
 
 #### Agent Jobs
 
@@ -136,7 +136,7 @@ I have a situation quite often where people outside of the team I work will load
 
 To fix this, I have to script the job out, take the T-SQL that the scripting function in SSMS creates and run it onto the server where the job is missing, it all takes a little bit of time, however with dbatools I can simplify this and do it with just one line
 
-![](/assets/img/copy-agent-job-ssms.png)
+![](/assets/img/copy-agent-job-ssms.png){: .img-fluid}
 
 I want to copy the dbatools test job from **localhost\sql2016** to **localhost\sql2014**
 
@@ -146,15 +146,15 @@ I want to copy the dbatools test job from **localhost\sql2016** to **localhost\s
 	</code>
 </pre>
 
-![](/assets/img/copy-agent-job.png)
+![](/assets/img/copy-agent-job.png){: .img-fluid}
 
 The job has been successfully copied from **localhost\sql2016** to **localhost\sql2014**
 
-![](/assets/img/copy-agent-job-ssms-2.png)
+![](/assets/img/copy-agent-job-ssms-2.png){: .img-fluid}
 
 Now then, let&#8217;s say that your job has a notification setup, when it fails I want an operator to be notified, what if that operator doesn&#8217;t exist on the destination server? Well, let&#8217;s find out.
 
-![](/assets/img/copy-agent-job-2.png)
+![](/assets/img/copy-agent-job-2.png){: .img-fluid}
 
 As you can see dbatools will not copy the job as it has a dependency, pretty neat huh.
 
@@ -164,7 +164,7 @@ In a lot of cases, the database mail profiles and accounts that are in use acros
 
 In this configuration I have purposely configured one of our SQL Server instances to have no database mail configuration, as shown below
 
-![](/assets/img/dba-mail-ssms.png)
+![](/assets/img/dba-mail-ssms.png){: .img-fluid}
 
 I want to copy all of the database mail configurations from an existing server in the estate to this instance. Word of warning though, by default, copy-dbadbmail will copy all database mail accounts and profiles.
 
@@ -174,11 +174,11 @@ I want to copy all of the database mail configurations from an existing server i
 	</code>
 </pre>
 
-![](/assets/img/dba-mail-ssms-2.png)
+![](/assets/img/dba-mail-ssms-2.png){: .img-fluid}
 
 Now if I go back to SSMS I will see that all the database mail configuration has been copied
 
-![](/assets/img/dba-mail-ssms-3.png)
+![](/assets/img/dba-mail-ssms-3.png){: .img-fluid}
 
 #### Logins
 
@@ -190,7 +190,7 @@ Sometimes I need to copy all or some of the logins from one server to another, y
 	</code>
 </pre>
 
-![](/assets/img/copy-logins.png)
+![](/assets/img/copy-logins.png){: .img-fluid}
 
 If I hope into C:\temp\cred.sql I will see that the SID is even copied which is great for Availability Group situations where I need the same SQL Account with the same SID spread over multiple availability group members.
 
@@ -202,7 +202,7 @@ However, let&#8217;s say I want to export just one login from the server this ca
 	</code>
 </pre>
 
-![](/assets/img/copy-logins-single.png)
+![](/assets/img/copy-logins-single.png){: .img-fluid}
 
 What about multiple accounts? They can be passed to -login with a comma, separating each login as shown below.
 
@@ -220,7 +220,7 @@ This one is really cool! So I have a database on **servera** (localhost\sql2014)
 
 As you can see bwlow the database exists on **servera** but not on **serverb**
 
-![](/assets/img/copy-database-ssms.png)
+![](/assets/img/copy-database-ssms.png){: .img-fluid}
 
 To copy if we need to execute one line of code
 
@@ -230,11 +230,11 @@ To copy if we need to execute one line of code
 	</code>
 </pre>
 
-![](/assets/img/copy-database-ps-1.png)
+![](/assets/img/copy-database-ps-1.png){: .img-fluid}
 
 What has happened behind the scenes here is that dbatools has taken a copy only backup of the **MigrationTest** database and popped it into C:\temp\migration it has then taken that backup and restored it to the specified destination which in this case is serverb, I am able to see that it was successful by looking directly inside SSMS
 
-![](/assets/img/copy-database-ssms-2.png)
+![](/assets/img/copy-database-ssms-2.png){: .img-fluid}
 
 Once dbatools was happy that the restore had completed successfully, the backup that it initially took is removed unless you explicitly tell it not to delete it by passing the -NoBackupCleanUp flag.
 
@@ -242,7 +242,7 @@ _In a production environment the -SharedPath will need to be a valid UNC path ac
 
 _**Note:**_ You can only copy a database from a SQL Server instance which has a version less than or equal to the version of the SQL Server you are restoring to. You can&#8217;t copy a database from a SQL Server with a version greater than the version of the SQL Server you are restoring to.
 
-![](/assets/img/copy-database-no-sorry.png)
+![](/assets/img/copy-database-no-sorry.png){: .img-fluid}
 
 ### The Wrap Up
 

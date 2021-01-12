@@ -13,7 +13,7 @@ tags:
 
 I had an issue on one node in the new SQL 2014 cluster that had just been built S-SQL06 specifically where [KB4470220](https://support.microsoft.com/en-us/help/4470220/cumulative-update-1-for-sql-server-2014-sp3) & [KB4532095](https://support.microsoft.com/en-us/help/4532095/description-of-the-security-update-for-sql-server-2014-sp3-gdr-feb) wouldn’t install, they kept throwing an error with code 0x80070643 which when googled didn’t relate to the actual problem, I did some digging and found out what was causing the problem and thought I would share my findings in case anyone runs into this same problem in the future.
 
-![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-1.jpg)
+![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-1.jpg){: .img-fluid}
 
 As I couldn’t get the updates to install from within windows I manually downloaded both of these KB items however for some reason the Windows Update Catalog wouldn’t work so I broke out powershell and pulled them using the following cmdlet, you will need [kbupdate](https://github.com/potatoqualitee/kbupdate) installed for this to work
 
@@ -27,7 +27,7 @@ Once I had them downloaded I tried installing each update individually on the se
 
 *“The user data directory in the registry is not valid”*
 
-![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-2.png)
+![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-2.png){: .img-fluid}
 
 A quick google search pointed me to Dave Pinal’s [article](https://blog.sqlauthority.com/2015/05/16/sql-server-service-pack-error-the-user-data-directory-in-the-registry-is-not-valid-verify-defaultdata-key-under-the-instance-hive-points-to-a-valid-directory/) on the same issue.  
 
@@ -39,24 +39,24 @@ Now that I had the registry open, I wanted to check against each node in the clu
 
 ## SQL05
 
-![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-3.jpg)
+![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-3.jpg){: .img-fluid}
 
 I checked the data and log defaults in SQL and they were correct
 
-![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-4.jpg)
+![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-4.jpg){: .img-fluid}
 
 This path is VALID and physically exists so the update installed on this server as expected
 
 ## SQL06
 
-![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-5.jpg)
+![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-5.jpg){: .img-fluid}
 
 I checked the data and log defaults in SQL and they were correct
 
-![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-6.png)
+![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-6.png){: .img-fluid}
 
 However, as you can see there is a mismatch, this node has been configured to have the data and log files on teh root of **S:\\** and **L:\\** however **S:\Data** and **L:\Data** don’t actually exist at all so I created the Data directory on both S:\ & L:\ drives on SQL06 which made the physical path S:\Data and L:\Data available and tried the updates again
 
 Lone behold – they installed first time
 
-![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-7.jpg)
+![Database Corruption 1](/assets/img/SQL-Service-Pack-Install-Error-7.jpg){: .img-fluid}
