@@ -1,7 +1,7 @@
 ---
 title: Inserting data from a select
 date: 2019-07-01T16:00:03+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /inserting-data-from-a-select
 categories:

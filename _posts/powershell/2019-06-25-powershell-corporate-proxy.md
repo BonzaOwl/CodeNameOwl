@@ -1,7 +1,7 @@
 ---
 title: 'PowerShell &#038; Corporate Proxy'
 date: 2019-06-25T17:47:58+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /powershell-corporate-proxy
 categories:

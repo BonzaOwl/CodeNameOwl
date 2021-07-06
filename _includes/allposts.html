@@ -9,13 +9,13 @@
 
 
                 <span class="home-post-date" style="display:inline">
-                  <time>Posted: {{ post.date | date: "%B %-d, %Y"  }}</time>
+                  <time><strong>Posted:</strong> {{ post.date | date: "%B %-d, %Y"  }} <strong>By:</strong> {{post.author}}</time>
                 </span>
 
                 <span class="single-category mobile-hide" style="display:inline">
 
-                    {% for category in post.categories %}
-                  <span class="category-high"> <a href="/categories/#{{ category | downcase }}">{{category }}</a>  </span>
+                   {% for category in post.categories %}
+                  <span class="category-high"><strong>In:</strong>  <a href="/categories/#{{ category | downcase }}">{{category }}</a>  </span>
                   {%endfor%}
                 </span>
 

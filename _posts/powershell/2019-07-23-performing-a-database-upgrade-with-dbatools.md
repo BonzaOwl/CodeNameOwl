@@ -1,7 +1,7 @@
 ---
 title: Performing a database upgrade with dbatools
 date: 2019-07-23T18:00:43+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /performing-a-database-upgrade-with-dbatools
 categories:

@@ -1,7 +1,7 @@
 ---
 title: Building a Formula One Race Tracker – Part Three
 date: 2019-04-23T16:00:04+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /building-a-formula-one-race-tracker-part-three
 categories:

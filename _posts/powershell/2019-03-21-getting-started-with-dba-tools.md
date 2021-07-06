@@ -1,7 +1,7 @@
 ---
 title: Getting started with DBATools
 date: 2019-03-21T16:00:06+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /getting-started-with-dba-tools
 categories:

@@ -1,7 +1,7 @@
 ---
 title: SQL Server 2014 Service Pack Error
 date: 2020-02-29T08:00:00+00:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /SQL-Server-2014-Service-Pack-Error
 categories:

@@ -224,8 +224,10 @@ label
   background-color: #f2f2f2; 
   border-radius: 5px 5px 5px 5px;
   -webkit-border-radius:5px 5px 5px 5px;
-  padding-top: .75rem; 
-  padding-bottom: .75rem
+  padding-top: .95rem; 
+  padding-bottom: .75rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
 }
 
 /* 

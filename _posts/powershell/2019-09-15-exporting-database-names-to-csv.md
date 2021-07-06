@@ -1,7 +1,7 @@
 ---
 title: Exporting Database Names To CSV
 date: 2019-09-15T11:30:45+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /exporting-database-names-to-csv
 categories:

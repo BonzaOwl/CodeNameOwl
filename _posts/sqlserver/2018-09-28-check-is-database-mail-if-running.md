@@ -1,7 +1,7 @@
 ---
 title: Check If Database Mail Is Running
 date: 2018-09-28T07:46:00+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /check-is-database-mail-if-running
 image: /wp-content/uploads/2018/09/Check-If-Database-Mail-Is-Running-1200x280.png

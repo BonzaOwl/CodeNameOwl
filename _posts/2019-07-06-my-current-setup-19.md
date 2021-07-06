@@ -1,7 +1,7 @@
 ---
 title: My Current 2019 Setup
 date: 2019-07-06T14:17:13+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /my-current-setup-19
 categories:

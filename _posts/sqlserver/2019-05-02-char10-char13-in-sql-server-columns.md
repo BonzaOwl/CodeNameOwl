@@ -1,7 +1,7 @@
 ---
 title: 'CHAR(10) &#038; CHAR(13) in SQL Server Columns'
 date: 2019-05-02T16:00:47+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /char10-char13-in-sql-server-columns
 categories:

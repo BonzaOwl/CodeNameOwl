@@ -1,7 +1,7 @@
 ---
 title: 'T-SQL Tuesday #113 &#8211; Tracking All Things Vegan'
 date: 2019-04-13T08:30:42+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /t-sql-tuesday-113-tracking-all-things-vegan
 categories:

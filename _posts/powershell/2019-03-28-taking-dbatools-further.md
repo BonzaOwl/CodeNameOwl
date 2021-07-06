@@ -1,7 +1,7 @@
 ---
 title: Taking dbatools further
 date: 2019-03-28T16:00:09+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /taking-dbatools-further
 categories:

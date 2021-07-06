@@ -1,7 +1,7 @@
 ---
 title: 'Encryption with symmetric keys &#038; certificates'
 date: 2019-04-18T16:00:51+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /encryption-with-symmetric-keys-certificates
 categories:

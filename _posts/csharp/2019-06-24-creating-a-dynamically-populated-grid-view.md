@@ -1,7 +1,7 @@
 ---
 title: Creating a dynamically populated Grid View
 date: 2019-06-24T16:00:12+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /creating-a-dynamically-populated-grid-view
 categories:

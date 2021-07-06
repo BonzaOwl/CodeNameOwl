@@ -1,7 +1,7 @@
 ---
 title: 'Directory Searcher &#038; Ambiguous Name Resoloution'
 date: 2018-09-08T12:12:57+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /directory-searcher-ambiguous-name-resoloution
 image: /wp-content/uploads/2018/09/Directory-Searcher-Ambiguous-Name-Resoloution-1200x280.png

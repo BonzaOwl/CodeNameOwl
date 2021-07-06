@@ -1,7 +1,7 @@
 ---
 title: Whats eating up tempdb
 date: 2019-02-20T16:02:38+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /big-tempdb
 categories:

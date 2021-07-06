@@ -1,7 +1,7 @@
 ---
 title: Full Text Indexing Crawl Logs
 date: 2018-10-04T19:26:27+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /full-text-indexing-crawl-logs
 image: /wp-content/uploads/2018/10/Full-Text-Indexing-Crawl-Logs-1200x280.png

@@ -1,7 +1,7 @@
 ---
 title: Managing Agent Jobs in Availability Groups
 date: 2018-09-03T10:00:45+01:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /managing-agent-jobs-in-availability-groups
 image: /wp-content/uploads/2018/09/Managing-Agent-Jobs-in-Availability-Groups-1200x280.png

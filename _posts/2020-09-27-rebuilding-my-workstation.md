@@ -1,7 +1,7 @@
 ---
 title: Rebuilding My Workstation
 date: 2020-09-27T10:00:00+00:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /rebuilding-my-workstation
 categories:

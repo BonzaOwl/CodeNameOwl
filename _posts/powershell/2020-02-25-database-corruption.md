@@ -1,7 +1,7 @@
 ---
 title: Corrupting databases on purpose with dbatools
 date: 2020-02-25T22:00:00+00:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /corrupting-databases-on-purpose-with-dbatools
 categories:

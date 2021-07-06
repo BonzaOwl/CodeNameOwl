@@ -1,7 +1,7 @@
 ---
 title: Install Jekyll On Windows Using Linux Subsystem
 date: 2020-04-19T08:00:00+00:00
-author: BonzaOwl
+author: Rich
 layout: post
 permalink: /jekyll-windows-linux-subsystem
 categories:

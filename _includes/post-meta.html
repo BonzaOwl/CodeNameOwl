@@ -1,9 +1,11 @@
 <div class="date">      
     <span class="home-post-date" style="display:inline">
-        <time>Posted: {{ page.date | date: "%B %-d, %Y"  }}</time>
+        <time><strong>Posted on:</strong> {{ page.date | date: "%B %-d, %Y"  }} <strong>By:</strong> {{page.author}}</time> 
+        
     </span>
     {% for category in page.categories %}
      <span class="category-high">
+         <strong>In:</strong>   
          <a href="/categories/#{{ category | downcase }}">{{category }}</a> 
     </span> 
     {% endfor %}
